@@ -204,7 +204,7 @@ tw-passage {
 .lost {
   font-size: 70px;
 }
-        </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">(set: $items to (a: ))
+        </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="225,225" size="100,100">(set: $items to (a: ))
 [Start]
 
 &lt;div class=&quot;buttonContainer&quot;&gt;
@@ -212,7 +212,50 @@ tw-passage {
 	[[continue|1]]
 &lt;/span&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="2" tags="" position="550,225" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="2" name="DIALOG-example" tags="" position="25,625" size="100,100">{=
+(set: $image_path to &quot;1&quot;)
+(display: &quot;Menu&quot;)
+
+(set: $dialog_index to 0)
+(set: $dialog_options to (a:))
+&lt;span class=&#39;myButton&#39;&gt;
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;Lee&quot;)
+	  (set: $dialog_text to &quot;
+	  &lt;div&gt;We and our partners store and/or access information on a device, such as unique IDs in cookies to process personal data. You may accept or manage your choices by clicking below, including your right to object where legitimate interest is used, or at any time in the privacy policy page. These choices will be signaled to our partners and will not affect browsing data.
+	  &lt;/div&gt;
+	  &quot;)
+	]
+
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+&lt;span class=&#39;myButton&#39;&gt;
+	(link-repeat: &quot;Next&quot;)[
+	  (set: $dialog_index to ($dialog_index + 1))
+	  (if: $dialog_index is 1)[
+		  (set: $dialog_image_path to &quot;Chaerin&quot;)
+		  (set: $dialog_text to &quot;
+		  &lt;div&gt;We and our partners store and/or access information on a device&lt;/div&gt;
+		  &quot;)
+		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
+	   ]
+	   (if: $dialog_index is 2)[
+	   		  (replace: ?dialog_button)[]
+			  (replace: ?dialog)[{=
+			  &lt;div class=&quot;dialog&quot;&gt;
+				&lt;div class=&quot;buttonContainer&quot;&gt;
+				  &lt;div class=&#39;myButton&#39;&gt;
+					[[Go to Passage 2|x]]
+				  &lt;/div&gt;
+				&lt;/div&gt;
+			  &lt;/div&gt;
+
+			  ]
+	]]&lt;dialog_button|
+&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="3" name="2" tags="" position="525,225" size="100,100">{=
 (set: $image_path to &quot;2&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -226,7 +269,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="3" name="3" tags="" position="700,225" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="4" name="3" tags="" position="675,225" size="100,100">{=
 (set: $image_path to &quot;3&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -234,7 +277,7 @@ tw-passage {
 	[[Continue|4]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="4" tags="" position="850,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="4" tags="" position="825,225" size="100,100">{=
 (set: $image_path to &quot;4&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -242,7 +285,7 @@ tw-passage {
 	[[Continue|5]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="5" tags="" position="1000,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="5" tags="" position="975,225" size="100,100">{=
 (set: $image_path to &quot;5&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -250,7 +293,7 @@ tw-passage {
 	[[Continue|6]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="6" tags="" position="1150,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="6" tags="" position="1125,225" size="100,100">{=
 (set: $image_path to &quot;6&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -266,7 +309,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="7" name="7-a" tags="" position="1275,150" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="8" name="7-a" tags="" position="1250,150" size="100,100">{=
 (set: $image_path to &quot;7&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -280,7 +323,7 @@ tw-passage {
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="8" name="10" tags="" position="1625,650" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="9" name="10" tags="" position="1600,650" size="100,100">{=
 (set: $image_path to &quot;12&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -288,7 +331,7 @@ tw-passage {
 	[[Continue|11]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="11" tags="" position="1425,650" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="11" tags="" position="1600,800" size="100,100">{=
 (set: $image_path to &quot;13&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -296,17 +339,17 @@ tw-passage {
 	[[Continue|12]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="12" tags="" position="1275,650" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="12" tags="" position="1600,950" size="100,100">{=
 (set: $image_path to &quot;15&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;You could still see the water drops on the leaves. Luckily, it’s easier to see tracks on muddy ground. Lee hears the sound of a spring nearby and suggests going that direction. John, meanwhile, spotted a trail used by animals. No fresh marks, but it might lead to prey. While discussing their options, a bird flew over them.&lt;div class=&#39;myButton&#39;&gt;
-	[[Go to the Spring.|12-a]]
-	[[Follow the Path.|12-b]]
-	[[Follow the Bird.|12-c]]
+	[[Go to the Spring.|12.1]]
+	[[Follow the Path.|12.2]]
+	[[Follow the Bird.|12.3]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="13" tags="" position="675,725" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="13" tags="" position="1675,1700" size="100,100">{=
 (set: $image_path to &quot;23&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -314,7 +357,7 @@ tw-passage {
 	[[Continue|14]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="25,125" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="Menu" tags="" position="25,150" size="100,100">{=
 &lt;div class=&quot;menu&quot;&gt;
   &lt;div class=&quot;menu-image&quot;&gt;
 (print: &#39;&lt;img id=&quot;pic&quot; src=&quot;./images/&#39; + (text: $image_path) + &#39;.png&quot;/&gt;&#39;)
@@ -326,7 +369,7 @@ tw-passage {
 	]
 	&lt;/span&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="1" tags="" position="400,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="1" tags="" position="375,225" size="100,100">{=
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -335,7 +378,7 @@ tw-passage {
 	[[Continue|2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Dialog" tags="" position="25,325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Dialog" tags="" position="25,300" size="100,100">{=
 [&lt;div class=&quot;dialog&quot;&gt;
 	(if: $dialog_image_path is not &quot;&quot;)[
 			(print: &#39;&lt;img class=&quot;dialog-image&quot; src=&quot;./dialog/&#39; + (text: $dialog_image_path) + &#39;.png&quot;/&gt;&#39;)
@@ -362,7 +405,7 @@ tw-passage {
 	 ]
 	 &lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;]&lt;dialog|</tw-passagedata><tw-passagedata pid="15" name="7-b" tags="" position="1275,300" size="100,100">{=
+&lt;/div&gt;]&lt;dialog|</tw-passagedata><tw-passagedata pid="16" name="7-b" tags="" position="1250,300" size="100,100">{=
 (set: $image_path to &quot;7&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -376,7 +419,7 @@ tw-passage {
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="16" name="8.0" tags="" position="1425,225" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="17" name="x" tags="" position="25,750" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="18" name="8.0" tags="" position="1400,225" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -384,7 +427,7 @@ tw-passage {
 	[[Continue|8-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="8-a" tags="" position="1575,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="8-a" tags="" position="1550,225" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 
@@ -411,8 +454,8 @@ tw-passage {
 
 	
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="18" name="8-b" tags="" position="1575,100" size="100,100">{=
-(set: $image_path to &quot;8&quot;)
+</tw-passagedata><tw-passagedata pid="20" name="8-b" tags="" position="1550,100" size="100,100">{=
+(set: $image_path to &quot;2&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -425,7 +468,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="1725,225" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="21" name="9" tags="" position="1700,225" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 
@@ -456,7 +499,7 @@ tw-passage {
   &lt;/span&gt;
 
   [(display: &quot;Dialog&quot;)]&lt;dialog|
-]</tw-passagedata><tw-passagedata pid="20" name="9-a" tags="" position="2025,75" size="100,100">{=
+]</tw-passagedata><tw-passagedata pid="22" name="9-a" tags="" position="2000,75" size="100,100">{=
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
@@ -476,7 +519,7 @@ tw-passage {
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="21" name="9-b" tags="" position="2025,225" size="100,100">{=
+]</tw-passagedata><tw-passagedata pid="23" name="9-b" tags="" position="2000,225" size="100,100">{=
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
@@ -496,7 +539,7 @@ tw-passage {
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="22" name="9-c" tags="" position="2025,350" size="100,100">{=
+]</tw-passagedata><tw-passagedata pid="24" name="9-c" tags="" position="2000,350" size="100,100">{=
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
@@ -511,25 +554,33 @@ tw-passage {
 (if:visits &gt;= 2)[{=
 (set: $items to (a: &#39;key&#39;))
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt; You found a key
+  &lt;div class=&quot;buttonContainer&quot;&gt; Found key
 	&lt;div class=&#39;myButton&#39;&gt;
 	[[Back|9]]
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="23" name="9.1" tags="" position="1625,400" size="100,100">{=
+]</tw-passagedata><tw-passagedata pid="25" name="9.1" tags="" position="1600,400" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
+
+(set: $dialog_index to 0)
 (set: $dialog_options to (a:))
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;Lee&quot;)
-	  (set: $dialog_next to true)
 	  (set: $dialog_text to &quot;&lt;div&gt;Told you so. I think I’m going hunting tomorrow to get some food.&lt;/div&gt;&quot;)
 	]
-  (if: $dialog_index is 1)[
+
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+&lt;span class=&#39;myButton&#39;&gt;
+	(link-repeat: &quot;Next&quot;)[
+	  (set: $dialog_index to ($dialog_index + 1))
+	  (if: $dialog_index is 1)[
 		  (set: $dialog_image_path to &quot;John&quot;)
-		  (set: $dialog_next to false)
 		  (set: $dialog_text to &quot;&quot;)
 		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;9.1.1&quot;, &quot;text&quot;, &#39;Say \&quot;No, it\&#39;s too dangerous!\&quot;&#39;))
 		  (set: $opt2 to (dm:  &quot;path&quot;, &quot;9.1.2&quot;, &quot;text&quot;, &#39;Say \&quot;Yeah. Hunting might help our situation.\&quot;&#39;))
@@ -537,13 +588,8 @@ tw-passage {
 		  (replace: ?dialog_button)[]
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
-&lt;/span&gt;
-
-[(display: &quot;Dialog&quot;)]&lt;dialog|
-
-
-
-</tw-passagedata><tw-passagedata pid="24" name="9.2" tags="" position="1825,400" size="100,100">{=
+	]&lt;dialog_button|
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="26" name="9.2" tags="" position="1800,400" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 
@@ -571,9 +617,11 @@ tw-passage {
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	]&lt;dialog_button|
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="25" name="9.1.1" tags="" position="1550,525" size="100,100">{=
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="27" name="9.1.1" tags="" position="1525,525" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
+
+(set: $dialog_index to 0)
 (set: $dialog_options to (a: ) )
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
@@ -587,7 +635,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="26" name="9.1.2" tags="" position="1700,525" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="28" name="9.1.2" tags="" position="1675,525" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 
@@ -604,7 +652,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="27" name="12-a" tags="" position="1125,550" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="29" name="12.1" tags="" position="1450,1100" size="100,100">{=
 (set: $image_path to &quot;14&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -612,43 +660,43 @@ tw-passage {
 	[[Go Back|12]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="12-b" tags="" position="1125,675" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="12.2" tags="" position="1600,1100" size="100,100">{=
 (set: $image_path to &quot;16&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;After picking the direction, they got lucky pretty quickly and spotted boar traces.
 &lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|12-a.1]]
+	[[Continue|12.2.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="12-c" tags="" position="1125,800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="12.3" tags="" position="1750,1100" size="100,100">{=
 (set: $image_path to &quot;17&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;After picking the direction, they got lucky pretty quickly and spotted deer traces.
 &lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|12-b.1]]
+	[[Continue|12.3.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="12-b.1" tags="" position="975,800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="12.3.1" tags="" position="1750,1250" size="100,100">{=
 (set: $image_path to &quot;18&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They spot the deer. Lee removes the rifle from his back and shoots. The deer falls. Bullseye.
 &lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|12-b.2]]
+	[[Continue|12.3.2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="12-a.1" tags="" position="975,675" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="12.2.1" tags="" position="1600,1250" size="100,100">{=
 (set: $image_path to &quot;18&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They spot the boar. Lee removes the rifle from his back and shoots. The boar falls. Bullseye.
 &lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|12-a.2]]
+	[[Continue|12.2.2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="12-a.2" tags="" position="825,675" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="12.2.2" tags="" position="1600,1400" size="100,100">{=
 (set: $image_path to &quot;19&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -656,7 +704,7 @@ tw-passage {
 	[[Continue|13]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="12-b.2" tags="" position="825,800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="12.3.2" tags="" position="1750,1400" size="100,100">{=
 (set: $image_path to &quot;20&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -664,7 +712,7 @@ tw-passage {
 	[[Continue|13]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="14" tags="" position="500,725" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="14" tags="" position="1675,1850" size="100,100">{=
 (set: $image_path to &quot;24&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -672,7 +720,7 @@ tw-passage {
 	[[Continue|15]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="15" tags="" position="350,725" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="15" tags="" position="1675,2000" size="100,100">{=
 (set: $image_path to &quot;25&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -680,7 +728,7 @@ tw-passage {
 	[[Continue|16]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="16" tags="" position="200,725" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="16" tags="" position="1675,2150" size="100,100">{=
 (set: $image_path to &quot;27&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -688,7 +736,7 @@ tw-passage {
 	[[Continue|17]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="17" tags="" position="200,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="17" tags="" position="1675,2300" size="100,100">{=
 (set: $image_path to &quot;26&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -697,7 +745,7 @@ tw-passage {
 	[[Investigate Tobin’s House.|18]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="17-1" tags="" position="300,875" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="17-1" tags="" position="1550,2450" size="100,100">{=
 (set: $image_path to &quot;26&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -705,7 +753,7 @@ tw-passage {
 	[[Investigate Tobin’s House.|18]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="18" tags="" position="375,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="18" tags="" position="1675,2600" size="100,100">{=
 (set: $image_path to &quot;28&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -713,7 +761,7 @@ tw-passage {
 	[[Continue|19]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="19" tags="" position="525,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="19" tags="" position="1675,2750" size="100,100">{=
 (set: $image_path to &quot;29&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -722,7 +770,7 @@ tw-passage {
 	[[Continue|20]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="20" tags="" position="675,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="20" tags="" position="1675,2900" size="100,100">{=
 (set: $image_path to &quot;30&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -731,7 +779,7 @@ tw-passage {
 	[[Continue|21]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="21" tags="" position="825,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="21" tags="" position="1675,3050" size="100,100">{=
 (set: $image_path to &quot;32&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -739,7 +787,7 @@ tw-passage {
 	[[Continue|22]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="22" tags="" position="975,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="22" tags="" position="1675,3200" size="100,100">{=
 (set: $image_path to &quot;33&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -747,7 +795,7 @@ tw-passage {
 	[[Continue|23]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="44" name="23" tags="" position="1125,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="23" tags="" position="1675,3350" size="100,100">{=
 (set: $image_path to &quot;31&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -755,7 +803,7 @@ tw-passage {
 	[[Continue|24]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="24" tags="" position="1275,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="24" tags="" position="1675,3575" size="100,100">{=
 (set: $image_path to &quot;34&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -763,7 +811,7 @@ tw-passage {
 	[[Continue|26]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="26" tags="" position="1425,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="26" tags="" position="1675,3800" size="100,100">{=
 (set: $image_path to &quot;35&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -771,7 +819,7 @@ tw-passage {
 	[[Continue|27]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="27" tags="" position="1575,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="27" tags="" position="1675,3950" size="100,100">{=
 (set: $image_path to &quot;36&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -779,7 +827,7 @@ tw-passage {
 	[[Continue|28]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="28" tags="" position="1725,1025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="28" tags="" position="1675,4100" size="100,100">{=
 (set: $image_path to &quot;37&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -787,7 +835,7 @@ tw-passage {
 	[[Continue|29]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="29" tags="" position="1863.3333333333333,1130" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="29" tags="" position="1675,4250" size="100,100">{=
 (set: $image_path to &quot;38&quot;)
 (set: $items to (a: &#39;key&#39;,&#39;medicine&#39;))
 (display: &quot;Menu&quot;)
@@ -796,7 +844,7 @@ tw-passage {
 	[[Continue|30]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="30" tags="" position="1728.3333333333333,1221.6666666666667" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="30" tags="" position="1675,4400" size="100,100">{=
 (set: $image_path to &quot;39&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -804,7 +852,7 @@ tw-passage {
 	[[Continue|31]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="31" tags="" position="1576.6666666666665,1220" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="31" tags="" position="1675,4550" size="100,100">{=
 (set: $image_path to &quot;40&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -812,7 +860,7 @@ tw-passage {
 	[[Continue|32]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="32" tags="" position="1401.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="32" tags="" position="1675,4700" size="100,100">{=
 (set: $image_path to &quot;42&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -820,7 +868,7 @@ tw-passage {
 	[[Continue|33]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="33" tags="" position="1251.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="33" tags="" position="1675,4850" size="100,100">{=
 (set: $image_path to &quot;44&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -828,7 +876,7 @@ tw-passage {
 	[[Continue|34]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="34" tags="" position="1101.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="34" tags="" position="1675,5000" size="100,100">{=
 (set: $image_path to &quot;45&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -836,7 +884,7 @@ tw-passage {
 	[[Continue|35]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="951.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="35" tags="" position="1675,5150" size="100,100">{=
 (set: $image_path to &quot;46&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -844,7 +892,7 @@ tw-passage {
 	[[Continue|36]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="36" tags="" position="801.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="36" tags="" position="1675,5300" size="100,100">{=
 (set: $image_path to &quot;47&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -852,28 +900,30 @@ tw-passage {
 	[[Continue|37]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="651.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="37" tags="" position="1675,5450" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
- &lt;div class=&quot;buttonContainer&quot;&gt;
 Near the entrance to the city, they spot armed guards, discussing orders from their chief, Luke Terry.
-&lt;div class=&#39;myButton&#39;&gt;
-  	[[John and Lee talk to them|37-Loose]]
+  &lt;div class=&quot;buttonContainer&quot;&gt;&lt;div class=&#39;myButton&#39;&gt;
+  	[[John and Lee talk to them|37-END]]
   &lt;/div&gt;
 	&lt;div class=&#39;myButton&#39;&gt;
 	[[They think it’s is best if they avoid them.|37.1]]
   &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="58" name="37-Loose" tags="" position="651.6666666666666,1363.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="60" name="37-END" tags="" position="1500,5600" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;The guards shoot them.
   &lt;p/&gt;
  (display: &quot;Lost&quot;)
+  &lt;div class=&#39;myButton&#39;&gt;
+	[[Restart Game|Start]]
+	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="37.1" tags="" position="501.66666666666663,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="37.1" tags="" position="1675,5600" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -881,7 +931,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Contiue|38]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="38" tags="" position="351.66666666666663,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="62" name="38" tags="" position="1675,5775" size="100,100">{=
 (set: $image_path to &quot;43&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -889,12 +939,8 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|39]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Lost" tags="" position="25,225" size="100,100"> &lt;div class=&quot;lost&quot;&gt;(text-colour:white)+(bg:(gradient: 0, 0,#474747,0.4794,#e61919,1,#474747))[&#39;&#39;You Died&#39;&#39;]
- &lt;/div&gt;
- &lt;div class=&#39;myButton&#39;&gt;
-	[[Restart Game|Start]]
-&lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="201.66666666666663,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Lost" tags="" position="25,425" size="100,100"> &lt;div class=&quot;lost&quot;&gt;(text-colour:white)+(bg:(gradient: 0, 0,#474747,0.4794,#e61919,1,#474747))[&#39;&#39;You Died&#39;&#39;]
+ &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39" tags="" position="1675,5925" size="100,100">{=
 (set: $image_path to &quot;49&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -903,7 +949,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Go Right|39-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="39-a" tags="" position="126.66666666666663,1338.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a" tags="" position="1800,6075" size="100,100">{=
 (set: $image_path to &quot;56&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -911,7 +957,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Go Right|39-a-1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-b" tags="" position="276.66666666666663,1338.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="39-b" tags="" position="1550,6075" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -919,7 +965,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|39-b-1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="126.66666666666663,1463.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="66" name="39-b-1" tags="" position="276.66666666666663,1463.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="39-a-1" tags="" position="1800,6225" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="68" name="39-b-1" tags="" position="1550,6225" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -933,17 +979,25 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="67" name="39-b-2" tags="" position="276.66666666666663,1588.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="69" name="39-b-2" tags="" position="1550,6375" size="100,100">{=
 (set: $image_path to &quot;51&quot;)
 (display: &quot;Menu&quot;)
+(set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
-	  (if: $dialog_index is 0)[
-		  (set: $dialog_image_path to &quot;&quot;)
-		  (set: $dialog_options to (a:))
-		  (set: $dialog_next to true)
-		  (set: $dialog_text to &quot;There is a woman in front of them.&quot;)
-		]
-		  (if: $dialog_index is 1)[
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_options to (a:))
+	  (set: $dialog_text to &quot;There is a woman in front of them.&quot;)
+	]
+
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+&lt;span class=&#39;myButton&#39;&gt;
+	(link-repeat: &quot;Next&quot;)[
+	  (set: $dialog_index to ($dialog_index + 1))
+	  (if: $dialog_index is 1)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
 		  (set: $dialog_text to &quot;What are you doing here?&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
@@ -990,57 +1044,57 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	   ]
 	  (if: $dialog_index is 9)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_next to false)
 		  (set: $dialog_text to &quot;I have a map. I can trade something for it.&quot;)
 		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40&quot;, &quot;text&quot;, &#39;Continue&#39;))
 		  (set: $dialog_options to (a: $opt1) )
 	   ]
+	]&lt;dialog_button|
 &lt;/span&gt;
-
-[(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="68" name="40" tags="" position="276.66666666666663,1713.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="70" name="40" tags="" position="1550,6525" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
-(set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They hear something growl behind her.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|40.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="40.1" tags="" position="526.6666666666666,1713.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="40.1" tags="" position="1550,6675" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
+(set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_options to (a:))
-	  (set: $dialog_next to true)
 	  (set: $dialog_text to &quot;What is that?&quot;)
 	]
 
-	  (if: $dialog_index is 1)[
-		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_next to false)
-		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40.1-a&quot;, &quot;text&quot;, &#39;Trade medicine for the map&#39;))
-		  (set: $opt2 to (dm:  &quot;path&quot;, &quot;40.1-b&quot;, &quot;text&quot;, &#39;She is infected. They kill the child&#39;))
-		  (set: $opt3 to (dm:  &quot;path&quot;, &quot;40.1-END&quot;, &quot;text&quot;, &#39;They get close to the child to see her.&#39;))
-		  (set: $dialog_options to (a: $opt1,$opt2,$opt3) )
-		  (set: $dialog_text to &quot;It’s my daughter. She’s sick. She needs medicine. Do you have any? I’d trade some medicine for the map.&quot;)
-		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
-	   ]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="70" name="40.1-a" tags="" position="676.6666666666666,1838.3333333333333" size="100,100">{=
+
+&lt;span class=&#39;myButton&#39;&gt;
+	(link-repeat: &quot;Next&quot;)[
+	  (set: $dialog_index to ($dialog_index + 1))
+	  (if: $dialog_index is 1)[
+		  (set: $dialog_image_path to &quot;Chae&quot;)
+		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40.1-a&quot;, &quot;text&quot;, &#39;Trade medicine for the map&#39;))
+		  (set: $opt2 to (dm:  &quot;path&quot;, &quot;40.1-b&quot;, &quot;text&quot;, &#39;She is infected. They kill the child&#39;))
+		  (set: $opt3 to (dm:  &quot;path&quot;, &quot;40.1-c&quot;, &quot;text&quot;, &#39;They get close to the child to see her.&#39;))
+		  (set: $dialog_options to (a: $opt1,$opt2,$opt3) )
+		  (set: $dialog_text to &quot;It’s my daughter. She’s sick. She needs medicine. Do you have any? I’d trade some medicine for the map&quot;)
+		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
+	   ]
+	]&lt;dialog_button|
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="72" name="40.1-a" tags="" position="1400,6850" size="100,100">{=
 (set: $image_path to &quot;53&quot;)
 (display: &quot;Menu&quot;)
-(set: $items to (a: &#39;key&#39;))
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee trade medicine for the map. They know where the hospital is now&lt;div class=&#39;myButton&#39;&gt;
 	[[Leave the sewer|42]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="40.1-b" tags="" position="676.6666666666666,1713.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="40.1-b" tags="" position="1550,6850" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1048,14 +1102,17 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|40.1-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="40.1-Loose" tags="" position="676.6666666666666,1588.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="40.1-c" tags="" position="1700,6850" size="100,100">{=
 (set: $image_path to &quot;55&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee got to close to the child. Chae–Rin Jung is afraid that they will hurt her. She kills them both.&lt;p/&gt;
  (display: &quot;Lost&quot;)
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="42" tags="" position="1126.6666666666665,1713.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="74" name="40.1-b.1" tags="" position="801.6666666666666,1713.3333333333333" size="100,100">{=
+  &lt;div class=&#39;myButton&#39;&gt;
+	[[Restart Game|Start]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="42" tags="" position="1425,7300" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="76" name="40.1-b.1" tags="" position="1550,6975" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1069,7 +1126,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="75" name="40.1-b.2" tags="" position="926.6666666666666,1713.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="77" name="40.1-b.2" tags="" position="1550,7100" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
