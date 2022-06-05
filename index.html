@@ -553,38 +553,34 @@ tw-passage {
 
 
 
-</tw-passagedata><tw-passagedata pid="24" name="9.2" tags="" position="1825,400" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="24" name="9.2" tags="" position="1825,398.3333333333333" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
-
-(set: $dialog_index to 0)
 (set: $dialog_options to (a:))
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;Lee&quot;)
+	  (set: $dialog_next to true)
 	  (set: $dialog_text to &#39;&lt;div&gt;Are you insane? I am not going to die from starvation. I am going out hunting right in the morning!&lt;/div&gt;&#39;)
 	]
-
-&lt;/span&gt;
-
-[(display: &quot;Dialog&quot;)]&lt;dialog|
-
-&lt;span class=&#39;myButton&#39;&gt;
-	(link-repeat: &quot;Next&quot;)[
-	  (set: $dialog_index to ($dialog_index + 1))
-	  (if: $dialog_index is 1)[
+   (if: $dialog_index is 1)[
+	  	  (set: $dialog_next to false)
 		  (set: $dialog_image_path to &quot;Lee&quot;)
-		  (set: $dialog_text to &#39;It\&#39;s getting late. We should rest before tomorrow. Don’t look at me. You won’t slack off. You are coming with me&#39;)
+		  (set: $dialog_text to &#39;It\&#39;s getting late. We should rest before tomorrow. Don’t look at me.&lt;br/&gt; You won’t slack off. You are coming with me.&#39;)
 		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;10&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	      (set: $dialog_options to (a: $opt1) )
 		  (replace: ?dialog_button)[]
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
-	]&lt;dialog_button|
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="25" name="9.1.1" tags="" position="1550,525" size="100,100">{=
+
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+</tw-passagedata><tw-passagedata pid="25" name="9.1.1" tags="" position="1550,525" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_options to (a: ) )
+(set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;Lee&quot;)
