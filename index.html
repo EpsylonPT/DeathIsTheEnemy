@@ -204,6 +204,16 @@ tw-passage {
 .lost {
   font-size: 70px;
 }
+
+.passage {
+  	transition: none;
+	transition-property: none;
+}
+
+.passage-in {
+  	transition: none;
+	transition-property: none;
+}
         </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">(set: $items to (a: ))
 [Start]
 
@@ -457,7 +467,7 @@ tw-passage {
 
   [(display: &quot;Dialog&quot;)]&lt;dialog|
 ]</tw-passagedata><tw-passagedata pid="20" name="9-a" tags="" position="2025,75" size="100,100">{=
-(set: $image_path to &quot;1&quot;)
+(set: $image_path to &quot;9&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
 &lt;div class=&quot;dialog&quot;&gt;
@@ -477,7 +487,7 @@ tw-passage {
   &lt;/div&gt;
 &lt;/div&gt;
 ]</tw-passagedata><tw-passagedata pid="21" name="9-b" tags="" position="2025,225" size="100,100">{=
-(set: $image_path to &quot;1&quot;)
+(set: $image_path to &quot;10&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
 &lt;div class=&quot;dialog&quot;&gt;
@@ -497,7 +507,7 @@ tw-passage {
   &lt;/div&gt;
 &lt;/div&gt;
 ]</tw-passagedata><tw-passagedata pid="22" name="9-c" tags="" position="2025,350" size="100,100">{=
-(set: $image_path to &quot;1&quot;)
+(set: $image_path to &quot;11&quot;)
 (display: &quot;Menu&quot;)
 (if:visits is 1)[{=
 &lt;div class=&quot;dialog&quot;&gt;
@@ -787,7 +797,7 @@ tw-passage {
 	[[Continue|29]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="29" tags="" position="1863.3333333333333,1130" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="29" tags="" position="1863,1130" size="100,100">{=
 (set: $image_path to &quot;38&quot;)
 (set: $items to (a: &#39;key&#39;,&#39;medicine&#39;))
 (display: &quot;Menu&quot;)
@@ -796,7 +806,7 @@ tw-passage {
 	[[Continue|30]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="30" tags="" position="1728.3333333333333,1221.6666666666667" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="30" tags="" position="1728,1221" size="100,100">{=
 (set: $image_path to &quot;39&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -804,7 +814,7 @@ tw-passage {
 	[[Continue|31]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="31" tags="" position="1576.6666666666665,1220" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="31" tags="" position="1576,1220" size="100,100">{=
 (set: $image_path to &quot;40&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -812,7 +822,7 @@ tw-passage {
 	[[Continue|32]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="32" tags="" position="1401.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="32" tags="" position="1401,1213" size="100,100">{=
 (set: $image_path to &quot;42&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -820,7 +830,7 @@ tw-passage {
 	[[Continue|33]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="33" tags="" position="1251.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="33" tags="" position="1251,1213" size="100,100">{=
 (set: $image_path to &quot;44&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -828,7 +838,7 @@ tw-passage {
 	[[Continue|34]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="34" tags="" position="1101.6666666666665,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="34" tags="" position="1101,1213" size="100,100">{=
 (set: $image_path to &quot;45&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -836,7 +846,7 @@ tw-passage {
 	[[Continue|35]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="951.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="951,1213" size="100,100">{=
 (set: $image_path to &quot;46&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -844,7 +854,7 @@ tw-passage {
 	[[Continue|36]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="36" tags="" position="801.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="36" tags="" position="801,1213" size="100,100">{=
 (set: $image_path to &quot;47&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -852,7 +862,7 @@ tw-passage {
 	[[Continue|37]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="651.6666666666666,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="651,1213" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -865,7 +875,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[They think it’s is best if they avoid them.|37.1]]
   &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="58" name="37-Loose" tags="" position="651.6666666666666,1363.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="58" name="37-Loose" tags="" position="651,1363" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -873,7 +883,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
   &lt;p/&gt;
  (display: &quot;Lost&quot;)
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="37.1" tags="" position="501.66666666666663,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="37.1" tags="" position="501,1213" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -881,7 +891,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Contiue|38]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="38" tags="" position="351.66666666666663,1213.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="38" tags="" position="351,1213" size="100,100">{=
 (set: $image_path to &quot;43&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -894,7 +904,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
  &lt;div class=&#39;myButton&#39;&gt;
 	[[Restart Game|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="201.66666666666663,1213.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="201,1213" size="100,100">{=
 (set: $image_path to &quot;49&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -903,7 +913,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Go Right|39-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="39-a" tags="" position="126.66666666666663,1338.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="39-a" tags="" position="126,1338" size="100,100">{=
 (set: $image_path to &quot;56&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -911,7 +921,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Go Right|39-a-1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-b" tags="" position="276.66666666666663,1338.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-b" tags="" position="276,1338" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -919,7 +929,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|39-b-1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="126.66666666666663,1463.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="66" name="39-b-1" tags="" position="276.66666666666663,1463.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="126,1463" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="66" name="39-b-1" tags="" position="276,1463" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -933,7 +943,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="67" name="39-b-2" tags="" position="276.66666666666663,1588.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="67" name="39-b-2" tags="" position="276,1588" size="100,100">{=
 (set: $image_path to &quot;51&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -998,7 +1008,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="68" name="40" tags="" position="276.66666666666663,1713.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="68" name="40" tags="" position="276,1713" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1007,7 +1017,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|40.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="40.1" tags="" position="526.6666666666666,1713.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="69" name="40.1" tags="" position="526,1713" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1031,7 +1041,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="70" name="40.1-a" tags="" position="676.6666666666666,1838.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="70" name="40.1-a" tags="" position="676,1838" size="100,100">{=
 (set: $image_path to &quot;53&quot;)
 (display: &quot;Menu&quot;)
 (set: $items to (a: &#39;key&#39;))
@@ -1040,7 +1050,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Leave the sewer|42]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="40.1-b" tags="" position="676.6666666666666,1713.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="40.1-b" tags="" position="676,1713" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1048,14 +1058,14 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 	[[Continue|40.1-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="40.1-Loose" tags="" position="676.6666666666666,1588.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="40.1-Loose" tags="" position="676,1588" size="100,100">{=
 (set: $image_path to &quot;55&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee got to close to the child. Chae–Rin Jung is afraid that they will hurt her. She kills them both.&lt;p/&gt;
  (display: &quot;Lost&quot;)
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="42" tags="" position="1126.6666666666665,1713.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="74" name="40.1-b.1" tags="" position="801.6666666666666,1713.3333333333333" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="42" tags="" position="1126,1713" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="74" name="40.1-b.1" tags="" position="801,1713" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1069,7 +1079,7 @@ Near the entrance to the city, they spot armed guards, discussing orders from th
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="75" name="40.1-b.2" tags="" position="926.6666666666666,1713.3333333333333" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="75" name="40.1-b.2" tags="" position="926,1713" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
