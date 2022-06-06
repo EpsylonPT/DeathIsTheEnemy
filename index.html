@@ -11,13 +11,61 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Zombies.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Zombies" startnode="1" creator="Twine" creator-version="2.3.15" ifid="7828D553-647A-4BC8-9C0E-0C3C518A155F" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(https://fonts.googleapis.com/css?family=VT323);
 
+.feup{
+ width: 400px; 
+  top: 90px;
+}
+
+xtw-sidebar{
+	visibility: hidden
+}
+
+xtw-sidebar xtw-icon.redo {
+	display: none;
+}
+xtw-sidebar xtw-icon.undo {
+	display: none;
+}
+
+.start{
+    background-image: url(./images/start.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  	height: 1000px;
+}
+
+.end{
+ top: 200px;
+}
+
+.footer{
+ top: 45px;  
+}
+
+.buttonContainerstart{
+  top: 100px;
+}
+
 html {
   font-family: 'VT323', sans-serif;
+  background:#060606 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAAC5JREFUGFcFwaENAAAIA7CRoEaCw/L/f4gJBLTW3Tcz2F1YVZ0kkIS5+0UEMhMPRh8Mvv52fnIAAAAASUVORK5CYII=);
+}
+
+tw-story{
+ top: -125px; 
 }
 
 tw-story[tags~="flashback"] {
 	filter: sepia(100%);
   	background: #453232;
+}
+
+body {
+  width: 150%;
+  height: 150%;
+  transform-origin: top left;
+  transform: scale(66%);
+
 }
 
 .menu {
@@ -85,7 +133,7 @@ tw-story[tags~="flashback"] {
 }
 
 .dialog {
-  height: 270px;
+  height: 300px;
   margin: 10px;
   background: #474747;
   display: flex;
@@ -230,15 +278,31 @@ tw-passage {
     opacity: 1;
     filter: alpha(opacity=100);
 }
-        </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">(set: $items to (a: ))
-[Start]
 
+tw-story{
+background:#060606 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAAC5JREFUGFcFwaENAAAIA7CRoEaCw/L/f4gJBLTW3Tcz2F1YVZ0kkIS5+0UEMhMPRh8Mvv52fnIAAAAASUVORK5CYII=);
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">{=
+&lt;div class=&quot;start&quot;&gt;
+(set: $items to (a: ))
+&lt;h2&gt;Welcome to&lt;/h2&gt;
+&lt;div class=&quot;Game&quot;&gt;
+#(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span&gt; Death is the Enemy &lt;/span&gt;]&lt;/div&gt;
+&lt;p/&gt;
 &lt;div class=&quot;buttonContainer&quot;&gt;
+&lt;div class=&quot;buttonContainerstart&quot;&gt;
 &lt;span class=&#39;myButton&#39;&gt;
-	[[continue|1]]
+	[[Press To Start|1]]
 &lt;/span&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="2" name="2" tags="" position="550,225" size="100,100">{=
+&lt;/div&gt;
+&lt;div class=&quot;footer&quot;&gt;
+&lt;img class=&quot;feup&quot; src=&quot;./images/feup.png&quot;/&gt;
+&lt;h3&gt;
+This project was developed for Interactive Narratives&lt;p/&gt;
+Prof. Soraia Ferreira
+&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="2" tags="" position="550,225" size="100,100">{=
 (set: $image_path to &quot;2&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -327,27 +391,28 @@ tw-passage {
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;You could still see the water drops on the leaves. Luckily, it’s easier to see tracks on muddy ground. Lee hears the sound of a spring nearby and suggests going that direction. John, meanwhile, spotted a trail used by animals. No fresh marks, but it might lead to prey. While discussing their options, a bird flew over them.&lt;div class=&#39;myButton&#39;&gt;
-	[[Go to the Spring.|12-a]]
-	[[Follow the Path.|12-b]]
-	[[Follow the Bird.|12-c]]
+	[[Go to the spring.|12-a]]
+	[[Follow the path.|12-b]]
+	[[Follow the bird.|12-c]]
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="13" tags="" position="675,725" size="100,100">{=
 (set: $image_path to &quot;23&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;On the victorious way home, with prey in their hands, they stumbled on a horde of infected humans crossing a forest path. They follow a slow rhythm.&lt;br/&gt;Too many to count. The first time the two have seen infected up close. They decide to go another way home.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;On the victorious way home, with prey in their hands, they stumbled on a horde of infected humans crossing a forest path.&lt;br/&gt;They follow a slow rhythm.&lt;br/&gt;Too many to count. The first time the two have seen infected up close. They decide to go another way home.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|14]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="50,75" size="100,100">{=
-(print: (passage:)&#39;s name)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="50,75" size="100,100">&lt;div class=&quot;Game&quot;&gt;
+#(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span&gt; Death is the Enemy &lt;/span&gt;]&lt;/div&gt;
+{=
 &lt;div class=&quot;menu&quot;&gt;
   &lt;div class=&quot;menu-image&quot;&gt;
 (print: &#39;&lt;img id=&quot;pic&quot; src=&quot;./images/&#39; + (text: $image_path) + &#39;.png&quot;/&gt;&#39;)
   &lt;/div&gt;
   &lt;div class=&quot;menu-right&quot;&gt;
-	&lt;span&gt;Inventory {=
+	&lt;span class=&quot;inventory-text&quot;&gt;Inventory {=
 	(for: each _item, ...$items)[
 		(print: &#39;&lt;img id=&quot;inventory-item&quot; src=&quot;./items/&#39; + (text: _item) + &#39;.png&quot;/&gt;&#39;)
 	]
@@ -447,7 +512,7 @@ tw-passage {
 	  (set: $dialog_image_path to &quot;Lee&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;9&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )
-	  (set: $dialog_text to &quot;&lt;div&gt;Oh yeah? Go check it for yourself then&lt;/div&gt;&quot;)]
+	  (set: $dialog_text to &quot;&lt;div&gt;Oh yeah? Go check it for yourself then.&lt;/div&gt;&quot;)]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
@@ -455,16 +520,16 @@ tw-passage {
 </tw-passagedata><tw-passagedata pid="19" name="9" tags="" position="1725,225" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
-(if: not ($searched_rooms is 3))[{=
+(if: not ($searched_rooms &gt; 2))[{=
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They get inside the house. Lee looks through the window at the field.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|9-a]]
-	[[Continue|9-b]]
-	[[Continue|9-c]]
+  &lt;div class=&quot;buttonContainer&quot;&gt;Lee waits patiently for John to search the house for food.&lt;div class=&#39;myButton&#39;&gt;
+	[[Search the Stables|9-a]]
+	[[Search the Pantry|9-b]]
+	[[Search the Storage|9-c]]
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;]
-(if:$searched_rooms is 3)[{=
+(if:$searched_rooms &gt; 2)[{=
   (set: $dialog_index to 0)
   (set: $dialog_options to (a:))
   &lt;span class=&#39;myButton&#39;&gt;
@@ -473,8 +538,7 @@ tw-passage {
 			(set: $opt1 to (dm:  &quot;path&quot;, &quot;9.1&quot;, &quot;text&quot;, &#39;You were right! We won’t last until January with what’s left.&#39;))
 			(set: $opt2 to (dm:  &quot;path&quot;, &quot;9.2&quot;, &quot;text&quot;, &#39;Say \&quot;Nah. It’s fine. We just eat less and we’re good.\&quot;&#39;))
 			(set: $dialog_options to (a: $opt1, $opt2) )
-			(set: $dialog_text to &quot;
-			&lt;div&gt;John enters the room and sees his grandfather sitting in the armchair and playing with Caesar.&lt;/div&gt;
+			(set: $dialog_text to &quot;&lt;div&gt;John enters the room and sees his grandfather sitting in the armchair and playing with Caesar.&lt;/div&gt;
 			&quot;)
 			(replace: ?dialog)[(display: &quot;Dialog&quot;)]
 		 ]
@@ -485,67 +549,63 @@ tw-passage {
 ]</tw-passagedata><tw-passagedata pid="20" name="9-a" tags="" position="2025,75" size="100,100">{=
 (set: $image_path to &quot;9&quot;)
 (display: &quot;Menu&quot;)
-(if:visits is 1)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-(set: $searched_rooms to ($searched_rooms+1))
-  &lt;div class=&quot;buttonContainer&quot;&gt; Search for something
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Search|9-a]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]
-(if:visits &gt;= 2)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt; Nothing found
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Back|9]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="21" name="9-b" tags="" position="2025,225" size="100,100">{=
+&lt;span class=&#39;myButton&#39;&gt;
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_next to true)
+	  (set: $dialog_text to &quot;The Stables&quot;)
+	  (set: $dialog_options to (a: ) )
+	  ]
+  (if: $dialog_index is 1)[
+  	  (set: $searched_rooms to ($searched_rooms+1))
+	  (set: $dialog_image_path to &quot;John&quot;)
+	  (set: $dialog_next to false)
+	  (set: $dialog_text to &quot;Well, we don’t store food in the stables. Other than the hay for the horses. &lt;br/&gt; These days we have to ration their food carefully. Poor things.&quot;)
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;9&quot;, &quot;text&quot;, &#39;Continue&#39;))
+	  (set: $dialog_options to (a: $opt1) )]
+&lt;/span&gt;
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+</tw-passagedata><tw-passagedata pid="21" name="9-b" tags="" position="2025,225" size="100,100">{=
 (set: $image_path to &quot;10&quot;)
 (display: &quot;Menu&quot;)
-(if:visits is 1)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-(set: $searched_rooms to ($searched_rooms+1))
-  &lt;div class=&quot;buttonContainer&quot;&gt; Search for something
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Search|9-b]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]
-(if:visits &gt;= 2)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt; Nothing found
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Back|9]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="22" name="9-c" tags="" position="2025,350" size="100,100">{=
+&lt;span class=&#39;myButton&#39;&gt;
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_next to true)
+	  (set: $dialog_text to &quot;The Pantry&quot;)
+	  (set: $dialog_options to (a: ) )
+	  ]
+  (if: $dialog_index is 1)[
+      (set: $searched_rooms to ($searched_rooms+1))
+	  (set: $dialog_image_path to &quot;John&quot;)
+	  (set: $dialog_next to false)
+	  (set: $dialog_text to &quot;It’s a mess. We’ve got some vegetables left. Altough they dont seem to be very fresh...&quot;)
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;9&quot;, &quot;text&quot;, &#39;Continue&#39;))
+	  (set: $dialog_options to (a: $opt1) )]
+&lt;/span&gt;
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+</tw-passagedata><tw-passagedata pid="22" name="9-c" tags="" position="2025,350" size="100,100">{=
 (set: $image_path to &quot;11&quot;)
 (display: &quot;Menu&quot;)
-(if:visits is 1)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-(set: $searched_rooms to ($searched_rooms+1))
-  &lt;div class=&quot;buttonContainer&quot;&gt; Search for something
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Search|9-c]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]
-(if:visits &gt;= 2)[{=
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt; Nothing found
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Back|9]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-]</tw-passagedata><tw-passagedata pid="23" name="9.1" tags="" position="1625,400" size="100,100">{=
+&lt;span class=&#39;myButton&#39;&gt;
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_next to true)
+	  (set: $dialog_text to &quot;The Storage&quot;)
+	  (set: $dialog_options to (a: ) )
+	  ]
+  (if: $dialog_index is 1)[
+      (set: $searched_rooms to ($searched_rooms+1))
+	  (set: $dialog_image_path to &quot;John&quot;)
+	  (set: $dialog_next to false)
+	  (set: $dialog_text to &quot;Well. Not much here either. I didn’t realize we had eaten this much.&lt;br/&gt;Only a couple of packages of canned food left.&quot;)
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;9&quot;, &quot;text&quot;, &#39;Continue&#39;))
+	  (set: $dialog_options to (a: $opt1) )]
+&lt;/span&gt;
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+</tw-passagedata><tw-passagedata pid="23" name="9.1" tags="" position="1625,400" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_options to (a:))
@@ -571,7 +631,7 @@ tw-passage {
 
 
 
-</tw-passagedata><tw-passagedata pid="24" name="9.2" tags="" position="1825,398" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="24" name="9.2" tags="" position="1825,400" size="100,100">{=
 (set: $image_path to &quot;8&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_options to (a:))
@@ -621,7 +681,7 @@ tw-passage {
 	  (set: $dialog_image_path to &quot;Lee&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;10&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )
-	  (set: $dialog_text to &#39;&lt;div&gt;\&quot;It might indeed\&quot;&lt;/div&gt;&#39;)
+	  (set: $dialog_text to &#39;&lt;div&gt;It might indeed&lt;/div&gt;&#39;)
 	]
 
 &lt;/span&gt;
@@ -692,7 +752,7 @@ tw-passage {
 (set: $image_path to &quot;24&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They&#39;d only seen infected on television, in the first days of the pandemic. It&#39;s been a long time since Lee and John have been isolated in the farm.&lt;br&gt; After the initial news of the infection and how dangerous it was, Lee locked them up in the farm.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They&#39;d only seen infected on television, in the first days of the pandemic.&lt;br/&gt;It&#39;s been a long time since Lee and John have been isolated in the farm.&lt;br&gt; After the initial news of the infection and how dangerous it was, Lee and John isoloated themselves in the farm.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|15]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -700,7 +760,7 @@ tw-passage {
 (set: $image_path to &quot;25&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;There has been no television signal in ages.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;There had been no television signal in ages.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|16]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -708,7 +768,7 @@ tw-passage {
 (set: $image_path to &quot;27&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They got out of the forest near their neighbor’s house. They haven’t seen Tobin in a while. Coming closer, they see a broken fence.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They got out of the forest near their neighbor’s house. They haven’t seen Tobin in a while.&lt;br/&gt;Coming closer, they see a broken fence.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|17]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -759,7 +819,7 @@ tw-passage {
 (set: $image_path to &quot;32&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Tobin turns and Lees sees that he is infected. He attacks.&lt;br/&gt;Lee falls to the ground, dropping his gun.&lt;br/&gt;Tobin is biting on Lee’s leg.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Tobin turns and Lees sees that he is infected. He attacks.&lt;br/&gt;Lee falls to the ground, dropping his gun.&lt;br/&gt;Tobin bites on Lee’s leg.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|22]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -767,7 +827,7 @@ tw-passage {
 (set: $image_path to &quot;33&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Lee is trying to grab the rifle. He screams for help.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Lee tries to grab the rifle. He screams for help.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|23]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -791,7 +851,7 @@ tw-passage {
 (set: $image_path to &quot;35&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John walks closer to his grandfather, noticing a puddle of blood on the ground. John helps Lee to his feet, picks up the gun, and together they rush home.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John walks closer to his grandfather, noticing a puddle of blood on the ground.&lt;br/&gt;John helps Lee to his feet, picks up the gun, and together they rush home.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|27]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -799,7 +859,7 @@ tw-passage {
 (set: $image_path to &quot;36&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John is trying to hurry up, as best has he can, but Lee is heavy. He is losing a lot of blood, marking their plantations in red.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John is trying to hurry up, as best has he can, but Lee is heavy.&lt;br/&gt;He is losing a lot of blood, marking their plantations in red.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|28]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -816,11 +876,11 @@ tw-passage {
 (set: $items to (a: &#39;medicine&#39;))
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John performs first aid on Lee. He did his best with the materials available. He managed to stop the bleeding, but the infection could already be in Lee’s blood.&lt;br/&gt;They need to act swiftly, for Lee to survive, otherwise, in the best case scenario, Lee is going to lose a leg.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John performs first aid on Lee. He did his best with the materials available.&lt;br/&gt;He managed to stop the bleeding, but the infection could already be in Lee’s blood.&lt;br/&gt;They need to act swiftly, for Lee to survive, otherwise, in the best case scenario, Lee is going to lose a leg.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|30]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="30" tags="flashback" position="1725,1225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="30" tags="flashback" position="1750,1225" size="100,100">{=
 (set: $image_path to &quot;39&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -828,7 +888,7 @@ tw-passage {
 	[[Continue|31]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="31" tags="flashback" position="1575,1225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="31" tags="flashback" position="1600,1225" size="100,100">{=
 (set: $image_path to &quot;40&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -836,7 +896,7 @@ tw-passage {
 	[[Continue|32]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="32" tags="flashback" position="1450,1200" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="32" tags="flashback" position="1450,1225" size="100,100">{=
 (set: $image_path to &quot;42&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -845,7 +905,7 @@ tw-passage {
 	[[Continue|33]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="33" tags="flashback" position="1300,1200" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="53" name="33" tags="flashback" position="1300,1225" size="100,100">{=
 (set: $image_path to &quot;44&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -853,51 +913,63 @@ tw-passage {
 	[[Continue|34]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="34" tags="" position="1146,1211" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="54" name="34" tags="" position="1150,1225" size="100,100">{=
 (set: $image_path to &quot;45&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;The following morning, Lee, in a weaker condition, decides the only way to cure his wound is to find a hospital in the closest city, Los Angeles. He knows there&#39;s no other option. John helps Lee get on the horse, and together they go to Los Angeles.They’ve got some provisions in their backpacks, guns ready to fire, and Caesar is accompanying them. They avoid the woods, because of the already known dangers there. They arrive at the main street, leading them directly to the city&#39;s door.Passing by a horror scene. Never ending lines of cars, from both sides, with objects and trash scattered across the floor, along with bodies. So many bodies. They travel with their horses carefully through the obstacles.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;The following morning, Lee, in a weaker condition, decides the only way to cure his wound is to find a hospital in the closest city, Los Angeles. He knows there&#39;s no other option. John helps Lee get on the horse, and together they go to Los Angeles.They’ve got some provisions in their backpacks, guns ready to fire, and Caesar is accompanying them. They avoid the woods, because of the already known dangers there. They arrive at the main street, leading them directly to the city&#39;s door.Passing by a horror scene. Never ending lines of cars, from both sides, with objects and trash scattered across the floor, along with bodies. So many bodies.&lt;br/&gt;They travel with their horses carefully through the obstacles.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|35]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="996,1211" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="1000,1225" size="100,100">{=
 (set: $image_path to &quot;46&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Closer to the city, they see crosses, along the road, with infected hanging from them, some are still moving and follow John and his grandfather with their eyes.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Closer to the city, they see crosses, along the road, with infected hanging from them.&lt;br/&gt;Some are still moving and follow John and his grandfather with their eyes.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|36]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="36" tags="" position="846,1211" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="36" tags="" position="850,1225" size="100,100">{=
 (set: $image_path to &quot;47&quot;)
+(set: $dialog_index to 0)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Near the entrance to the city, they spot armed guards. John and Lee hear them speak about a man named LUKE TERRY. From what they’ve gathered, it is the leader of a community inside LA called Hope Street.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Near the entrance to the city, they spot armed guards. John and Lee hear them speak about a man named Luke Terry. &lt;br/&gt;From what they’ve gathered, it is the leader of a community inside LA called Hope Street.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|37]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="700,1200" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="700,1225" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
  &lt;div class=&quot;buttonContainer&quot;&gt;The entrance had been closed with a rudimentary wall, built with tires, metal blocks and wood.
 &lt;div class=&#39;myButton&#39;&gt;
-  	[[Talk to the guards|37-Loose]]
+  	[[Talk to the guards|37.2]]
   &lt;/div&gt;
 	&lt;div class=&#39;myButton&#39;&gt;
 	[[Avoid the guards.|37.1]]
   &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="58" name="37-Loose" tags="" position="700,1350" size="100,100">{=
+
+</tw-passagedata><tw-passagedata pid="58" name="37.2" tags="" position="700,1350" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;The guards shoot them.
-  &lt;p/&gt;
- (display: &quot;Lost&quot;)
-  &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="37.1" tags="" position="550,1200" size="100,100">{=
+&lt;div class=&quot;myButton&quot;&gt;
+    (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;John&quot;)
+	  (set: $dialog_next to true)
+	  (set: $dialog_text to &quot;Hello! We are looking for help. My grandfather was bitten and needs medical attention.&lt;br/&gt;Can you help us? Do you have medical supplies?&quot;)]
+	  (set: $dialog_options to (a:) )
+  (if: $dialog_index is 1)[
+	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_next to false)
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;37.2-Loose&quot;, &quot;text&quot;, &quot;Continue&quot;))
+	  (set: $dialog_options to (a: $opt1) )
+	  (set: $dialog_text to &quot;Guard - \&quot;Stop right there!\&quot;&quot;)]
+&lt;/div&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+</tw-passagedata><tw-passagedata pid="59" name="37.1" tags="" position="550,1225" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -905,11 +977,11 @@ tw-passage {
 	[[Contiue|38]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="38" tags="" position="396,1211" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="38" tags="" position="400,1225" size="100,100">{=
 (set: $image_path to &quot;43&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;After some kilometers, at a slow pace, due to the state of Lee&#39;s leg, they find an open sewer. Lee knows the sewers have a connection to the inner city, because his brother was a civil constructor. From what they see, there&#39;s no other way to get into Los Angeles, all other accesses are closed.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;After some kilometers, at a slow pace, due to the state of Lee&#39;s leg, they find an open sewer. Lee knows the sewers have a connection to the inner city, because his brother was a civil constructor.&lt;br/&gt;From what they see, there&#39;s no other way to get into Los Angeles, all other accesses are closed.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|39]]
 	&lt;/div&gt;
   &lt;/div&gt;
@@ -918,32 +990,32 @@ tw-passage {
  &lt;div class=&#39;myButton&#39;&gt;
 	[[Restart Game|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="250,1200" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="250,1225" size="100,100">{=
 (set: $image_path to &quot;49&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They go in the sewer. They use the only lantern they had to light the way. Caesar is scared of the rats passing ahead of them. They walked for a couple of minutes before reaching the split.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They go into the sewer. They use the only lantern they had to light the way. Caesar is scared of the rats passing ahead of them.&lt;br/&gt;They walk for a couple of minutes before reaching a  fork in the murky tunnels.&lt;div class=&#39;myButton&#39;&gt;
 	[[Go Left|39-a]]
 	[[Go Right|42-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="42-a" tags="" position="850,1900" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="42-a" tags="" position="850,1850" size="100,100">{=
 (set: $image_path to &quot;56&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They walked a few meters, amidst dirty water and death, until they found a ramp leading to the exterior. They didn&#39;t recognize the city when they got to the surface. Six months had gone by since the start of the pandemic. The buildings had been destroyed, the houses abandoned and streets piled up. Moments of absolute silence, moments of grunts from the infected. Lee&#39;s state is deteriorating. John goes ahead with Caesar searching for a location of a hospital.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They walked a few meters, amidst dirty water and death, until they found a ramp leading to the exterior. They didn&#39;t recognize the city when they got to the surface. Six months had gone by since the start of the pandemic. The buildings had been destroyed, the houses abandoned and streets piled up. Moments of absolute silence, moments of grunts from the infected.&lt;br/&gt;Lee&#39;s state is deteriorating. John goes ahead with Caesar searching for a location of a hospital.&lt;div class=&#39;myButton&#39;&gt;
 	[[Go Right|43-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-a" tags="" position="100,1375" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-a" tags="" position="100,1325" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They continue their path inside the sewer, and after a few meters they hear female’s voice.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They continue their path inside the sewer, and after a few meters they hear a voice.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|39-a-1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="100,1500" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="100,1450" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -957,7 +1029,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="66" name="39-a-2" tags="" position="100,1625" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="66" name="39-a-2" tags="" position="100,1575" size="100,100">{=
 (set: $image_path to &quot;51&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -965,11 +1037,11 @@ tw-passage {
 		  (set: $dialog_image_path to &quot;&quot;)
 		  (set: $dialog_options to (a:))
 		  (set: $dialog_next to true)
-		  (set: $dialog_text to &quot;There is a woman in front of them.&quot;)
+		  (set: $dialog_text to &quot;A slim woman with black hair and green eyes appears in front of them.&quot;)
 		]
 		  (if: $dialog_index is 1)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_text to &quot;What are you doing here?&quot;)
+		  (set: $dialog_text to &quot;Please, don\&#39;t shoot, i mean no harm.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 2)[
@@ -979,17 +1051,17 @@ tw-passage {
 	   ]
 	  (if: $dialog_index is 3)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_text to &quot;I should be the one asking. I live here&quot;)
+		  (set: $dialog_text to &quot;I should be the one asking. I live here.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 4)[
 		  (set: $dialog_image_path to &quot;John&quot;)
-		  (set: $dialog_text to &quot;What? Why?&quot;)
+		  (set: $dialog_text to &quot;What? Why would you live in this filth?&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 5)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_text to &quot;There are no infected here and no hope street fanatics either&quot;)
+		  (set: $dialog_text to &quot;I can see you\&#39;re not from here.&lt;br/&gt;There are no infected in these sewers and no hope street fanatics either.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 6)[
@@ -999,30 +1071,25 @@ tw-passage {
 	   ]
 	  (if: $dialog_index is 7)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_text to &quot;You don’t want to know&quot;)
+		  (set: $dialog_text to &quot;You wouldn’t want to know.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 8)[
 		  (set: $dialog_image_path to &quot;John&quot;)
-		  (set: $dialog_text to &quot;Ok! maybe you can help us. We need to find a hospital&quot;)
-		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
-	   ]
-	  (if: $dialog_index is 9)[
-		  (set: $dialog_image_path to &quot;Chae&quot;)
-		  (set: $dialog_text to &quot;I have a map. I can trade something for it.&quot;)
+		  (set: $dialog_text to &quot;Nevermind then. Maybe you can help us. We need to find a hospital quick.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 	  (if: $dialog_index is 9)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
 		  (set: $dialog_next to false)
-		  (set: $dialog_text to &quot;I have a map. I can trade something for it.&quot;)
+		  (set: $dialog_text to &quot;I have a map of the city. I can trade something for it.&quot;)
 		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40&quot;, &quot;text&quot;, &#39;Continue&#39;))
 		  (set: $dialog_options to (a: $opt1) )
 	   ]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="67" name="40" tags="" position="100,1750" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="67" name="40" tags="" position="100,1700" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1031,7 +1098,7 @@ tw-passage {
 	[[Continue|40.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="40.1" tags="" position="250,1850" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="40.1" tags="" position="100,1875" size="100,100">{=
 (set: $image_path to &quot;52&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1039,77 +1106,70 @@ tw-passage {
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_options to (a:))
 	  (set: $dialog_next to true)
-	  (set: $dialog_text to &quot;What is that?&quot;)
+	  (set: $dialog_text to &quot;What the hell was that?&quot;)
 	]
-
 	  (if: $dialog_index is 1)[
 		  (set: $dialog_image_path to &quot;Chae&quot;)
 		  (set: $dialog_next to false)
-		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40.1-a&quot;, &quot;text&quot;, &#39;Trade medicine for the map&#39;))
-		  (set: $opt2 to (dm:  &quot;path&quot;, &quot;40.1-b&quot;, &quot;text&quot;, &#39;She is infected. They kill the child&#39;))
-		  (set: $opt3 to (dm:  &quot;path&quot;, &quot;40.1-END&quot;, &quot;text&quot;, &#39;They get close to the child to see her.&#39;))
-		  (set: $dialog_options to (a: $opt1,$opt2,$opt3) )
-		  (set: $dialog_text to &quot;It’s my daughter. She’s sick. She needs medicine. Do you have any? I’d trade some medicine for the map.&quot;)
+		  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40.1.a&quot;, &quot;text&quot;, &#39;Trade medicine for the map&#39;))
+		  (set: $opt2 to (dm:  &quot;path&quot;, &quot;40.1.b&quot;, &quot;text&quot;, &#39;Get close to the child to inspect her.&#39;))
+		  (set: $dialog_options to (a: $opt1,$opt2) )
+		  (set: $dialog_text to &quot;It’s my daughter. She’s sick.&lt;br/&gt;She needs medicine but we can\&#39;t leave this place, not in her ... condition.&lt;br/&gt;Do you have any? I’d trade some medicine for the map.&quot;)
 		  (replace: ?dialog)[(display: &quot;Dialog&quot;)]
 	   ]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
-</tw-passagedata><tw-passagedata pid="69" name="40.1-a" tags="" position="375,1850" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="69" name="40.1.a" tags="" position="225,1800" size="100,100">{=
 (set: $image_path to &quot;53&quot;)
-(set: $items to (a: ))
+(set: $items to (a: &quot;map&quot;))
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee trade medicine for the map. They know where the hospital is now.&lt;div class=&#39;myButton&#39;&gt;
 	[[Leave the sewer|42-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;	</tw-passagedata><tw-passagedata pid="70" name="40.1-b" tags="" position="375,1975" size="100,100">{=
+&lt;/div&gt;	</tw-passagedata><tw-passagedata pid="70" name="40.1.b" tags="" position="225,1975" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee know the infected are dangerous.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|40.1-b.1]]
+  &lt;div class=&quot;buttonContainer&quot;&gt;After getting closer to the child. John and Lee notice the obvious symptoms of the infection and its advanced state.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|41]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="40.1-Loose" tags="" position="375,1725" size="100,100">{=
-(set: $image_path to &quot;55&quot;)
-(display: &quot;Menu&quot;)
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee got to close to the child. Chae-Rin Jung gets scared that they will hurt her. (She quickly withdraws her gun, not giving them a moment to react, and shoots them.)&lt;p/&gt;
- (display: &quot;Lost&quot;)
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="42-b" tags="" position="850,2025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="71" name="42-b" tags="" position="850,1975" size="100,100">{=
 (set: $image_path to &quot;56&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They walked a few meters, amidst dirty water and death, until they found a ramp leading to the exterior. They didn&#39;t recognize the city when they got to the surface. Six months had gone by since the start of the pandemic. The buildings had been destroyed, the houses abandoned and streets piled up. Moments of absolute silence, moments of grunts from the infected. Lee&#39;s state is deteriorating. John goes ahead with Caesar.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They walked a few meters, amidst dirty water and death, until they found a ramp leading to the exterior. They didn&#39;t recognize the city when they got to the surface. Six months had gone by since the start of the pandemic. The buildings had been destroyed, the houses abandoned and streets piled up. Moments of absolute silence, moments of grunts from the infected.&lt;br/&gt;Lee&#39;s state is deteriorating. John goes ahead with Caesar.&lt;div class=&#39;myButton&#39;&gt;
 	[[Go Right|43-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="73" name="40.1-b.1" tags="" position="500,1975" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="72" name="41" tags="" position="350,1975" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;John&quot;)
-	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;40.1-b.2&quot;, &quot;text&quot;, &#39;Continue&#39;))
-	  (set: $dialog_options to (a: $opt1) )
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;41.a&quot;, &quot;text&quot;, &#39;Shoot the kid.&#39;))
+	  (set: $opt2 to (dm:  &quot;path&quot;, &quot;41.b-Loose&quot;, &quot;text&quot;, &#39;Try to talk the mother into her senses.&#39;))
+	  (set: $dialog_options to (a: $opt1,$opt2) )
 	  (set: $dialog_text to &quot;She’s not human anymore, she is beyond saving!&quot;)]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="74" name="40.1-b.2" tags="" position="625,1975" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="73" name="41.a" tags="" position="475,1925" size="100,100">{=
 (set: $image_path to &quot;54&quot;)
+(set: $items to (a: &quot;medicine&quot;,&quot;map&quot;))
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John kills the child. The mother tries to attack Lee.&lt;br/&gt;John kills her.&lt;br/&gt;They pick up the map. They now the location of the hospital.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John kills the child. The mother tries to attack Lee.&lt;br/&gt;John kills her.&lt;br/&gt;They pick up the map and the medicine. They now know the location of the hospital.&lt;div class=&#39;myButton&#39;&gt;
 	[[Leave the sewer|42-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="43-b" tags="" position="1025,2025" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="74" name="43-b" tags="" position="1025,1975" size="100,100">{=
 (set: $image_path to &quot;42&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1117,16 +1177,16 @@ tw-passage {
 	[[Continue|44]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="43-a" tags="" position="1025,1900" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="75" name="43-a" tags="" position="1025,1850" size="100,100">{=
 (set: $image_path to &quot;57&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Through the city streets they search for the hospital indications. They find a plate, half destroyed, with a map of the city, it has  multiple X’s. On the legend side there is a big X and under it says “Follow”. The hospital is a few kilometers away from their current position. They move through the destroyed city.
+  &lt;div class=&quot;buttonContainer&quot;&gt;Through the city streets they search for the hospital indications. They find a plate, half destroyed, with a map of the city, it has  multiple X’s. On the legend side there is a big X and under it says “Follow”. The hospital is a few kilometers away from their current position.
 &lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|44]]
+	[[Move through the destroyed city|44]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="44" tags="" position="1175,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="76" name="44" tags="" position="1175,1900" size="100,100">{=
 (set: $image_path to &quot;58&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1134,7 +1194,7 @@ tw-passage {
 	[[Continue|45]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="45" tags="" position="1300,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="45" tags="" position="1300,1900" size="100,100">{=
 (set: $image_path to &quot;59&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1142,7 +1202,7 @@ tw-passage {
 	[[Continue|46]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="46" tags="" position="1425,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="78" name="46" tags="" position="1425,1900" size="100,100">{=
 (set: $image_path to &quot;60&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1151,15 +1211,15 @@ tw-passage {
 	[[Continue|47]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="47" tags="" position="1550,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="47" tags="" position="1550,1900" size="100,100">{=
 (set: $image_path to &quot;61&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Their strategy worked. The blood is everywhere, their skin, their clothes and their weapons. It starts to rain, torrentially. They need to find shelter. Night&#39;s falling. The screams and grunts of the infected increase. It’s horrifying. After a few meters, they find an abandoned building. It seems to be what&#39;s left of some offices.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Their strategy worked. The blood is everywhere, their skin, their clothes and their weapons. It starts to rain, torrentially. They need to find shelter. Night&#39;s falling. The screams and grunts of the infected increase. It’s horrifying.&lt;br/&gt;After a few meters, they find an abandoned building. It seems to be what&#39;s left of some offices.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|48]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="48" tags="" position="1675,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="80" name="48" tags="" position="1675,1900" size="100,100">{=
 (set: $image_path to &quot;62&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1167,7 +1227,7 @@ tw-passage {
 	[[Continue|49]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="49" tags="" position="1800,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="49" tags="" position="1800,1900" size="100,100">{=
 (set: $image_path to &quot;63&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1176,7 +1236,7 @@ tw-passage {
 	[[Continue|50]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="83" name="50" tags="" position="1925,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="82" name="50" tags="" position="1925,1900" size="100,100">{=
 (set: $image_path to &quot;63&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1196,7 +1256,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="84" name="50-Loose" tags="" position="1925,1825" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="83" name="50-Loose" tags="" position="1925,1775" size="100,100">{=
 (set: $image_path to &quot;63&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1204,7 +1264,7 @@ tw-passage {
   &lt;p/&gt;
  (display: &quot;Lost&quot;)
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="50.1" tags="" position="2050,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="84" name="50.1" tags="" position="2050,1900" size="100,100">{=
 (set: $image_path to &quot;65&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1213,7 +1273,7 @@ tw-passage {
 	[[Continue|51]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="86" name="51" tags="" position="2175,1950" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="85" name="51" tags="" position="2175,1900" size="100,100">{=
 (set: $image_path to &quot;65&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1227,7 +1287,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="87" name="52" tags="" position="2175,2075" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="86" name="52" tags="" position="2175,2025" size="100,100">{=
 (set: $image_path to &quot;67&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1255,11 +1315,10 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="88" name="53" tags="" position="2175,2200" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="87" name="53" tags="" position="2175,2150" size="100,100">{=
 (set: $image_path to &quot;65&quot;)
 (display: &quot;Menu&quot;)
-
-&lt;div class=&quot;dialog&quot;&gt;
+&lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to true)
@@ -1271,13 +1330,16 @@ tw-passage {
 	  (set: $dialog_next to false)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;54&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1))]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="89" name="54" tags="" position="2175,2325" size="100,100">{=
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+</tw-passagedata><tw-passagedata pid="88" name="54" tags="" position="2175,2275" size="100,100">{=
 (set: $image_path to &quot;68&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
-	  (set: $dialog_text to &quot;She rolls her sleeve. John sees an ugly burn scar on her arm, in an X form.&quot;)]
+	  (set: $dialog_text to &quot;She rolls her sleeve. John sees an ugly burn scar on her arm, in an X shape.&quot;)
 	  (set: $dialog_next to true)
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
@@ -1285,7 +1347,7 @@ tw-passage {
 	  (set: $dialog_text to &quot;He marks all the members this way.&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;John&quot;)
-	  (set: $dialog_text to &quot;Do you want to come with me?&quot;)]
+	  (set: $dialog_text to &quot;That\&#39;s sickening. What a monster.&lt;br/&gt;Come with me, we can protect eachother.&quot;)]
   (if: $dialog_index is 3)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to false)
@@ -1296,24 +1358,24 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="90" name="55" tags="" position="2050,2325" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="89" name="55" tags="" position="2050,2275" size="100,100">{=
 (set: $image_path to &quot;69&quot;)
 (set: $dialog_index to 0)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Lyana goes with him. They both move together. The rain stops pouring.&lt;br/&gt;After they reach the offices, John explains the situation to his grandfather. Lyana says she&#39;s a doctor. She can help Lee. His state gets a bit better with Lyana&#39;s help.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Lyana goes with him. They both move together. The rain stops pouring.&lt;br/&gt;After they reach the offices, John explains the situation to his grandfather. Lyana says she&#39;s a doctor.&lt;br/&gt; She can help Lee. His state gets a bit better with Lyana&#39;s help.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|56]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="56" tags="" position="1925,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="90" name="56" tags="" position="1925,2275" size="100,100">{=
 (set: $image_path to &quot;71&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;When the sun rises, they leave their hideout and go to the hospital following the map on the plate. They turn around the corner and now it’s in their view.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;When the sun rises, they leave their hideout and go to the hospital following the map.&lt;br/&gt;They turn around the corner and now it’s in their view.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|56.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="56.1" tags="" position="1800,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="91" name="56.1" tags="" position="1800,2275" size="100,100">{=
 (set: $image_path to &quot;71&quot;)
 (set: $dialog_index to 0)
 (display: &quot;Menu&quot;)
@@ -1322,18 +1384,18 @@ tw-passage {
 	[[Continue|57]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="93" name="57" tags="" position="1675,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="57" tags="" position="1675,2275" size="100,100">{=
 (set: $image_path to &quot;73&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
-	  (set: $dialog_text to &quot;A group of armed men surrounds them. It&#39;s Luke Terry. He announces he&#39;s followed Lyana&#39;s footsteps to find her.&quot;)]
+	  (set: $dialog_text to &quot;A group of armed men surrounds them. It&#39;s Luke Terry.&quot;)
 	  (set: $dialog_next to true)
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
-	  (set: $dialog_text to &quot;I have been following your footsteps and finally found you stupid bitch.&quot;)]
+	  (set: $dialog_text to &quot;I have been following your footsteps and have finally found you, you stupid bitch.&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_text to &quot;He approaches them.&quot;)]
@@ -1347,15 +1409,15 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="94" name="58" tags="" position="1550,2325" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="93" name="58" tags="" position="1550,2275" size="100,100">{=
 (set: $image_path to &quot;74&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Caesar trying to protect his owner and attacks Luke.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Caesar tries to protect his owner and attacks Luke.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|59]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="95" name="59" tags="" position="1425,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="94" name="59" tags="" position="1425,2275" size="100,100">{=
 (set: $image_path to &quot;75&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1370,14 +1432,14 @@ tw-passage {
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to false)
-	  (set: $dialog_text to &quot;The dog goes down, inanimate&quot;)
+	  (set: $dialog_text to &quot;Caesar goes down, inanimate.&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;60&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )]
 &lt;/span&gt;
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="96" name="60" tags="" position="1300,2325" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="95" name="60" tags="" position="1300,2275" size="100,100">{=
 (set: $image_path to &quot;76&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1386,7 +1448,7 @@ tw-passage {
 	[[Continue|60.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="97" name="60.1" tags="" position="1175,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="96" name="60.1" tags="" position="1175,2275" size="100,100">{=
 (set: $image_path to &quot;76&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1400,16 +1462,16 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="98" name="61" tags="" position="1050,2325" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="97" name="61" tags="" position="1050,2275" size="100,100">{=
 (set: $image_path to &quot;78&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;The guards start laughing. John tries to attack one of them, but he is quickly put down. One of the guards punches him in the belly.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;The guards start laughing. John tries to attack one of them, but he is quickly put down. One of the guards punches him in the stomach.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|62]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="99" name="62" tags="" position="925,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="98" name="62" tags="" position="925,2275" size="100,100">{=
 (set: $image_path to &quot;77&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1420,7 +1482,7 @@ tw-passage {
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
-	  (set: $dialog_text to &quot;At last you are back.&quot;)]
+	  (set: $dialog_text to &quot;Where did you think you were going uhm?&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to false)
@@ -1431,7 +1493,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="100" name="63" tags="" position="800,2325" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="99" name="63" tags="" position="725,2275" size="100,100">{=
 (set: $image_path to &quot;79&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1439,7 +1501,7 @@ tw-passage {
 	[[Continue|64]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="64" tags="" position="675,2325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="64" tags="" position="550,2275" size="100,100">{=
 (set: $image_path to &quot;80&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1448,7 +1510,7 @@ tw-passage {
 	[[Continue|65]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="65" tags="" position="650,2475" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="65" tags="" position="375,2275" size="100,100">{=
 (set: $image_path to &quot;81&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1456,22 +1518,25 @@ tw-passage {
 	[[Continue|66]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="103" name="66" tags="" position="650,2625" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="102" name="66" tags="" position="375,2575" size="100,100">{=
 (set: $image_path to &quot;82&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
-	  (set: $dialog_image_path to &quot;&quot;)
+	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to true)
-	  (set: $dialog_text to &quot;Lyana tells them she was Luke&#39;s fianceé, and he can&#39;t get over the fact that she left him. He does not let her leave.&quot;)
+	  (set: $dialog_text to &quot;What was that beast talking about? About you running away from him?&quot;)
 	  (set: $dialog_options to (a: ))]
-  (if: $dialog_index is 1)[
+	 (if: $dialog_index is 1)[
+	  (set: $dialog_image_path to &quot;Lyana&quot;)
+	  (set: $dialog_text to &quot;I was... I am...&lt;br/&gt;Luke&#39;s fianceé, and he took it hard when i tried to leave him. This is not the first time i try it, the bastards always catches me.&quot;)]
+  (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_text to &quot;We´re fucked...&quot;)]
-  (if: $dialog_index is 2)[
-	  (set: $dialog_image_path to &quot;Lyana&quot;)
-	  (set: $dialog_text to &quot;True, but we can&#39;t give up. There is an infirmary in Hope Street. I can help Lee there. But first, we need to escape.&quot;)]
   (if: $dialog_index is 3)[
+	  (set: $dialog_image_path to &quot;Lyana&quot;)
+	  (set: $dialog_text to &quot;Don&#39;t say that, we can&#39;t give up. There is an infirmary in Hope Street.&lt;br/&gt; I can help Lee get there. But first, we need to escape.&quot;)]
+  (if: $dialog_index is 4)[
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to false)
 	  (set: $dialog_text to &quot;You are right, let’s get out of here.&quot;)
@@ -1481,31 +1546,28 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="104" name="67" tags="" position="800,2625" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="103" name="67" tags="" position="500,2575" size="100,100">{=
 (set: $image_path to &quot;83&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
- &lt;div class=&quot;buttonContainer&quot;&gt;Lyana calls the guard. Big guy slowly stands up and approaches the cell. She knows him, does small talk, and says that she would like to see Luke.&lt;br/&gt;John needs to make a decision. 
+ &lt;div class=&quot;buttonContainer&quot;&gt;Lyana calls the guard. The big guy slowly stands up and approaches the cell. She knows him, and she starts small talk.
 &lt;div class=&#39;myButton&#39;&gt;
-  	[[Steal the keys|67-a]]
-  &lt;/div&gt;
-	&lt;div class=&#39;myButton&#39;&gt;
-	[[Attack the guard|67-b]]
+  	[[Continue|67.1]]
   &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="105" name="67-a" tags="" position="950,2725" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="104" name="67-a" tags="" position="950,2675" size="100,100">{=
 (set: $image_path to &quot;85&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John steal the keys of the prison. The guard is unware.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John steal the keys of the prison cell. The guard is unware.&lt;div class=&#39;myButton&#39;&gt;
 	[[Wait for the guard to fall asleep|67-a-a]]
 		&lt;/div&gt;
 		&lt;div class=&#39;myButton&#39;&gt;
 	[[Attack him before he alerts the others|67-a-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="67-b" tags="" position="950,2500" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="67-b" tags="" position="950,2450" size="100,100">{=
 (set: $image_path to &quot;84&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1513,7 +1575,7 @@ tw-passage {
 	[[Continue|68]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="107" name="68" tags="" position="1325,2625" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="68" tags="" position="1325,2575" size="100,100">{=
 (set: $image_path to &quot;88&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
@@ -1534,7 +1596,7 @@ tw-passage {
   (if: $dialog_index is 4)[
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to false)
-	  (set: $dialog_text to &quot;You are right, let’s get out of here.&quot;)
+	  (set: $dialog_text to &quot;Maybe you are right, but he can also alert the others of our location.&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;68-a&quot;, &quot;text&quot;, &#39;Kill the doctor&#39;))
 	  (set: $opt2 to (dm:  &quot;path&quot;, &quot;68-b&quot;, &quot;text&quot;, &#39;Spare the Doctor&#39;))
 	  (set: $dialog_options to (a: $opt1, $opt2) )]
@@ -1542,7 +1604,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="108" name="67-a-a" tags="" position="1100,2675" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="107" name="67-a-a" tags="" position="1100,2625" size="100,100">{=
 (set: $image_path to &quot;86&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1550,15 +1612,15 @@ tw-passage {
 	[[Continue|68]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="67-a-b" tags="" position="1100,2800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="67-a-b" tags="" position="1100,2750" size="100,100">{=
 (set: $image_path to &quot;87&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John, Lyana and Lee attack the guard. Knocking up unconscious&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John, Lyana and Lee attack the guard. Knocking up unconscious.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|68]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="68-a" tags="" position="1450,2550" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="109" name="68-a" tags="" position="1450,2500" size="100,100">{=
 (set: $image_path to &quot;89&quot;)
 (set: $doctor_died to true)
 (display: &quot;Menu&quot;)
@@ -1568,7 +1630,7 @@ tw-passage {
 	[[Continue|68-a.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="68-b" tags="" position="1450,2700" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="110" name="68-b" tags="" position="1450,2650" size="100,100">{=
 (set: $image_path to &quot;91&quot;)
 (set: $doctor_died to false)
 (display: &quot;Menu&quot;)
@@ -1578,7 +1640,7 @@ tw-passage {
 	[[Continue|68-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="68-a.1" tags="" position="1600,2550" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="111" name="68-a.1" tags="" position="1600,2500" size="100,100">{=
 (set: $image_path to &quot;90&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1587,7 +1649,7 @@ tw-passage {
 	[[Continue|69]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="69" tags="" position="1750,2625" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="112" name="69" tags="" position="1750,2575" size="100,100">{=
 (set: $image_path to &quot;92&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1595,7 +1657,7 @@ tw-passage {
 	[[Continue|70]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="68-b.1" tags="" position="1600,2700" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="113" name="68-b.1" tags="" position="1600,2650" size="100,100">{=
 (set: $image_path to &quot;91&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1603,7 +1665,7 @@ tw-passage {
 	[[Continue|69]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="70" tags="" position="1875,2625" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="114" name="70" tags="" position="1875,2575" size="100,100">{=
 (set: $image_path to &quot;93&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1611,15 +1673,15 @@ tw-passage {
 	[[Continue|71]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="71" tags="" position="2000,2625" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="115" name="71" tags="" position="2000,2575" size="100,100">{=
 (set: $image_path to &quot;94&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Lee wakes up to sirens. Lyana and John around him. Two days have passed. They are hidden on Hope Street, in an abandoned house. Luke Terry and the other guards are looking for them.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Lee wakes up to sirens. Lyana and John around him. Two days have passed. They are hidden on Hope Street, in an abandoned house.&lt;br/&gt;Luke Terry and the other guards are looking for them.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|72]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="72" tags="" position="2000,2850" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="116" name="72" tags="" position="2000,2800" size="100,100">{=
 (set: $image_path to &quot;96&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1627,7 +1689,7 @@ tw-passage {
 	[[Continue|73]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="73" tags="" position="2000,3075" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="117" name="73" tags="" position="2000,3025" size="100,100">{=
 (set: $image_path to &quot;95&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1644,7 +1706,7 @@ tw-passage {
 	&lt;/div&gt;
 ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="74-a" tags="" position="1850,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="118" name="74-a" tags="" position="1850,2950" size="100,100">{=
 (set: $image_path to &quot;98&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1652,7 +1714,7 @@ tw-passage {
 	[[Continue|74-a.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="74-b" tags="" position="1850,3200" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="119" name="74-b" tags="" position="1850,3150" size="100,100">{=
 (set: $image_path to &quot;98&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1660,7 +1722,7 @@ tw-passage {
 	[[Continue|74-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="74-a.1" tags="" position="1725,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="120" name="74-a.1" tags="" position="1725,2950" size="100,100">{=
 (set: $image_path to &quot;99&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1668,14 +1730,14 @@ tw-passage {
 	[[Continue|74-a.2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="122" name="74-a.2" tags="" position="1600,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="121" name="74-a.2" tags="" position="1600,2950" size="100,100">{=
 (set: $image_path to &quot;100&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to true)
-	  (set: $dialog_text to &quot;Luke Terry arrives. Both sides open fire&quot;)
+	  (set: $dialog_text to &quot;Luke Terry arrives. Both sides open fire.&quot;)
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
@@ -1687,14 +1749,14 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="123" name="74-b.1" tags="" position="1600,3200" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="122" name="74-b.1" tags="" position="1600,3150" size="100,100">{=
 (set: $image_path to &quot;100&quot;)
 (display: &quot;Menu&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to true)
-	  (set: $dialog_text to &quot;Luke Terry looks at them. Both sides open fire&quot;)
+	  (set: $dialog_text to &quot;Luke Terry looks at them. Both sides open fire.&quot;)
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
@@ -1706,7 +1768,7 @@ tw-passage {
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="124" name="75" tags="" position="1475,3100" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="123" name="75" tags="" position="1475,3050" size="100,100">{=
 (set: $image_path to &quot;102&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1718,7 +1780,7 @@ tw-passage {
 	[[John opens the door|75-b]]
   &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="125" name="75-a" tags="" position="1225,3000" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="124" name="75-a" tags="" position="1225,2950" size="100,100">{=
 (set: $image_path to &quot;104&quot;)
 (set: $who_door to &quot;Lyana&quot;)
 (display: &quot;Menu&quot;)
@@ -1727,7 +1789,7 @@ tw-passage {
 	[[Continue|76]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="75-b" tags="" position="1225,3175" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="125" name="75-b" tags="" position="1225,3125" size="100,100">{=
 (set: $image_path to &quot;105&quot;)
 (set: $who_door to &quot;Lee&quot;)
 (display: &quot;Menu&quot;)
@@ -1736,7 +1798,7 @@ tw-passage {
 	[[Continue|76]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="76" tags="" position="1025,3075" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="76" tags="" position="1025,3025" size="100,100">{=
 (set: $image_path to &quot;101&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1752,7 +1814,7 @@ tw-passage {
 	&lt;/div&gt;
 ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="77-a" tags="" position="800,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="77-a" tags="" position="800,2950" size="100,100">{=
 (set: $image_path to &quot;109&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1760,15 +1822,15 @@ tw-passage {
 	[[Continue|77-a.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="77-b" tags="" position="800,3175" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="77-b" tags="" position="800,3123.3333333333335" size="100,100">{=
 (set: $image_path to &quot;108&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Lee is killed by the infected. He is too slow to move away from them, he is still hurt. So, they catch him.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;Lee is killed by the infected. He is too slow to move away from them. John and Lyana rush to try to catch him.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|77-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="77-a.1" tags="" position="625,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="129" name="77-a.1" tags="" position="625,2950" size="100,100">{=
 (set: $image_path to &quot;107&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1776,7 +1838,7 @@ tw-passage {
 	[[Continue|77-a.2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="77-a.2" tags="" position="475,3000" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="77-a.2" tags="" position="475,2950" size="100,100">{=
 (set: $image_path to &quot;110&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1784,31 +1846,31 @@ tw-passage {
 	[[Continue|78]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="77-b.1" tags="" position="625,3175" size="100,100">{=
-(set: $image_path to &quot;110&quot;)
-(display: &quot;Menu&quot;)
-&lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John screams in pain of Lee’s death.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|77-b.2]]
-	&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="77-b.2" tags="" position="475,3175" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="77-b.1" tags="" position="626.6666666666666,3121.6666666666665" size="100,100">{=
 (set: $image_path to &quot;111&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John screams for the death of is grandfather. He goes to him and takes his watch.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;In his last words, Lee urges John to take his watch and run away as fast as possible.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|77-b.2]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="77-b.2" tags="" position="475,3125" size="100,100">{=
+(set: $image_path to &quot;110&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John screams in pain of his grandfather&#39;s death.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|78]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="78" tags="" position="325,3075" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="78" tags="" position="325,3026.6666666666665" size="100,100">{=
 (set: $image_path to &quot;106&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;The infect start to flood him. Caos everywhere.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;The infect start to flood him. Caos ensues.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|79]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="79" tags="" position="325,3350" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="79" tags="" position="325,3200" size="100,100">{=
 (set: $image_path to &quot;103&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -1816,11 +1878,11 @@ tw-passage {
 	[[Continue|80]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="136" name="80" tags="" position="325,3600" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="80" tags="" position="326.6666666666667,3375" size="100,100">{=
 (set: $image_path to &quot;112&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;Luke Terry gets shot in the belly, but survives. He is hurt, but not dead yet. His guards go to him, to help him.
+  &lt;div class=&quot;buttonContainer&quot;&gt;Luke Terry gets shot in the stomach, but survives. He is hurt, but not dead yet. His guards rush to help him.
 (if: $who_door is &quot;Lyana&quot;)[
 &lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|80-a]]
@@ -1832,35 +1894,126 @@ tw-passage {
 	&lt;/div&gt;
 ]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="80-a" tags="" position="525,3800" size="100,100">{=
+&lt;/div&gt;	</tw-passagedata><tw-passagedata pid="136" name="80-a" tags="" position="543.3333333333333,3343.3333333333335" size="100,100">{=
 (set: $image_path to &quot;113&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John seizes the opportunity and run towards the door. The infected enter in mass in Hope Street. When running, they hear the screams of men. The infected had probably killed everyone. John goes through the streets of LA. He runs back to the sewers to leave the city. The horses that he and Lee left are gone. He arrives at the farm close to sunset. John burys Lee’s watch next to his grandmother’s grave, as he would have wanted. He returns to the house.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|FIM]]
+  &lt;div class=&quot;buttonContainer&quot;&gt;John seizes the opportunity and run towards the door. The infected enter in mass in Hope Street. When running, he hears the screams of men. The infected had probably killed everyone left.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|81-a]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="80-b" tags="" position="525,3575" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="137" name="80-b" tags="" position="531.6666666666666,3500" size="100,100">{=
 (set: $image_path to &quot;113&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lyana seize the opportunity and run towards the door. The infected enter in mass in Hope Street. When running, they hear the screams of men. The infected had probably killed everyone.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|81]]
+	[[Continue|81-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="FIM" tags="" position="1475,3700" size="100,100">FIM</tw-passagedata><tw-passagedata pid="140" name="81" tags="" position="825,3575" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="138" name="FIM" tags="" position="1358.3333333333333,3478.3333333333335" size="100,100">{=
+&lt;div class=&quot;start&quot;&gt;
+(set: $items to (a: ))
+&lt;div class=&quot;end&quot;&gt;
+#(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span &gt; Death is the Enemy &lt;/span&gt;]
+&lt;p/&gt;
+&lt;h1&gt;The end&lt;/h1&gt;
+&lt;h3&gt;An interactive storytelling experience created by:&lt;/h3&gt;
+&lt;h4&gt;Francisco Monteiro de Magalhães&lt;/h4&gt;
+&lt;h4&gt;Gabriela Vincente Ferreira&lt;/b4&gt;
+&lt;h4&gt;Gonçalo César Ferreira&lt;/h4&gt;
+&lt;h4&gt;Mykhailo Bevz&lt;/h4&gt;
+&lt;div class=&quot;buttonContainer&quot;&gt;
+&lt;div class=&quot;buttonContainerstart&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="139" name="81-b" tags="" position="686.6666666666666,3495" size="100,100">{=
 (set: $image_path to &quot;114&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lyana and John go through the streets of LA. They run back to the sewers to leave the city. The horses that he and Lee left are gone. They arrived at the farm close to sunset.&lt;div class=&#39;myButton&#39;&gt;
-	[[Continue|82]]
+	[[Continue|82-b]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="82" tags="" position="1000,3575" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="140" name="82-b" tags="" position="861.6666666666666,3495" size="100,100">{=
+(set: $image_path to &quot;116&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John and Lyana bury Lee’s watch next to his grandmother’s grave, as he would have wanted.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|83-b]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="37.2-Loose" tags="" position="700,1475" size="100,100">{=
+(set: $image_path to &quot;48&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;The guards shoot Lee and John before they could even reply.&lt;br/&gt;In these daring times people mistrust everyone who gets too close.
+  &lt;p/&gt;
+ (display: &quot;Lost&quot;)
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="41.b-Loose" tags="" position="475,2050" size="100,100">{=
+(set: $image_path to &quot;55&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee get closer to Chae.&lt;br/&gt; The sudden movement scares Chae-Rin Jung. Thinking they will hurt her.&lt;br/&gt;She quickly withdraws her gun, not giving them a moment to react, and shoots them.&lt;p/&gt;
+ (display: &quot;Lost&quot;)
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="143" name="67.1" tags="" position="625,2575" size="100,100">{=
+(set: $image_path to &quot;83&quot;)
+(display: &quot;Menu&quot;)
+&lt;span class=&#39;myButton&#39;&gt;
+  (if: $dialog_index is 0)[
+	  (set: $dialog_image_path to &quot;Lyana&quot;)
+	  (set: $dialog_next to false)
+	  (set: $dialog_text to &quot;&lt;div&gt;I would like to see Luke.&lt;br/&gt;&quot;)
+	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;67.2&quot;, &quot;text&quot;, &#39;Continue&#39;))
+	  (set: $dialog_options to (a: $opt1) )]
+&lt;/span&gt;
+
+[(display: &quot;Dialog&quot;)]&lt;dialog|
+
+</tw-passagedata><tw-passagedata pid="144" name="67.2" tags="" position="750,2575" size="100,100">{=
+(set: $image_path to &quot;83&quot;)
+(display: &quot;Menu&quot;)
+(set: $dialog_index to 0)
+&lt;div class=&quot;dialog&quot;&gt;
+ &lt;div class=&quot;buttonContainer&quot;&gt;John takes this momment to advance.
+&lt;div class=&#39;myButton&#39;&gt;
+  	[[Steal the keys|67-a]]
+  &lt;/div&gt;
+	&lt;div class=&#39;myButton&#39;&gt;
+	[[Attack the guard|67-b]]
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="145" name="81-a" tags="" position="696.6666666666666,3338.3333333333335" size="100,100">{=
+(set: $image_path to &quot;118&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John goes through the streets of LA. He runs back to the sewers to leave the city. The horses that he and Lee left beyind are gone. He arrives at the farm close to sunset. &lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|82-a]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="146" name="83-b" tags="" position="1021.6666666666667,3505" size="100,100">{=
 (set: $image_path to &quot;117&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;John and Lyana bury Lee’s watch next to his grandmother’s grave, as he would have wanted. They hug and watch the sunset together.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They hug and watch the sunset together. Pondering on what happened. The losses they both suffered and the value of life.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|FIM]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="147" name="82-a" tags="" position="883.3333333333335,3335" size="100,100">{=
+(set: $image_path to &quot;116&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John burys Lee’s watch next to his grandmother’s grave, as he would have wanted. He returns to the house.&lt;div class=&#39;myButton&#39;&gt;
+	[[Continue|83-a]]
+	&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="148" name="83-a" tags="" position="1036.6666666666667,3336.6666666666665" size="100,100">{=
+(set: $image_path to &quot;119&quot;)
+(display: &quot;Menu&quot;)
+&lt;div class=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;John ponders on what happened. The losses he suffered and the value of life.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|FIM]]
 	&lt;/div&gt;
   &lt;/div&gt;
