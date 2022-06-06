@@ -286,7 +286,12 @@ tw-passage {
 
 tw-story{
 background:#060606 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAAC5JREFUGFcFwaENAAAIA7CRoEaCw/L/f4gJBLTW3Tcz2F1YVZ0kkIS5+0UEMhMPRh8Mvv52fnIAAAAASUVORK5CYII=);
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="251,235" size="100,100">{=
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">var audio= document.createElement('audio');
+audio.id = "click";
+audio.src= "./audio/click.mp3";
+audio.loop = false;
+audio.volume = 0.2;
+document.body.appendChild(audio);</script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">{=
 &lt;div class=&quot;start&quot;&gt;
 (set: $items to (a: ))
 &lt;div class=&quot;start-header&quot;&gt;
@@ -418,6 +423,11 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="50,75" size="100,100">&lt;div class=&quot;Game&quot;&gt;
 #(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span&gt; Death is the Enemy &lt;/span&gt;]&lt;/div&gt;
 {=
+&lt;script&gt;
+var sound = document.getElementById(&#39;click&#39;);
+sound.currentTime = 0;
+sound.play();
+&lt;/script&gt;
 &lt;div class=&quot;menu&quot;&gt;
   &lt;div class=&quot;menu-image&quot;&gt;
 (print: &#39;&lt;img id=&quot;pic&quot; src=&quot;./images/&#39; + (text: $image_path) + &#39;.png&quot;/&gt;&#39;)
@@ -2146,12 +2156,10 @@ music.play();
 	[[Continue|FIM]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Audio" tags="" position="48,446" size="100,100">(print: &quot;&lt;script&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Audio" tags="" position="50,450" size="100,100">(print: &quot;&lt;script&gt;
 var passage = document.getElementsByTagName(&#39;tw-passage&#39;)[0];
 var audio = document.createElement(&#39;audio&#39;);
-console.log(passage);
 passage.appendChild(audio);
-
 passage.getElementsByTagName(&#39;audio&#39;)[0].src = \&quot;./audio/&quot; + $audio + &quot;.mp3\&quot;;
 passage.getElementsByTagName(&#39;audio&#39;)[0].loop = false;
 passage.getElementsByTagName(&#39;audio&#39;)[0].volume = 0.3;
