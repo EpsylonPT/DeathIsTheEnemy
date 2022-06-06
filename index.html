@@ -9,22 +9,22 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Zombies.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Zombies" startnode="1" creator="Twine" creator-version="2.3.15" ifid="7828D553-647A-4BC8-9C0E-0C3C518A155F" zoom="0.25" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(https://fonts.googleapis.com/css?family=VT323);
+<tw-storydata name="Zombies" startnode="1" creator="Twine" creator-version="2.3.15" ifid="7828D553-647A-4BC8-9C0E-0C3C518A155F" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(https://fonts.googleapis.com/css?family=VT323);
 
 .feup{
  width: 400px; 
   top: 90px;
 }
 
-tw-sidebar{
+xtw-sidebar{
 	visibility: hidden
 }
 
-tw-sidebar xtw-icon.redo {
+xtw-sidebar xtw-icon.redo {
 	display: none;
 }
 
-tw-sidebar xtw-icon.undo {
+xtw-sidebar xtw-icon.undo {
 	display: none;
 }
 
@@ -429,7 +429,7 @@ Prof. Soraia Ferreira
 	[[Continue|14]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="50,75" size="100,100">&lt;div class=&quot;Game&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Menu" tags="" position="0,3925" size="100,100">&lt;div class=&quot;Game&quot;&gt;
 #(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span&gt; Death is the Enemy &lt;/span&gt;]&lt;/div&gt;
 {=
 &lt;script&gt;
@@ -462,7 +462,7 @@ music.play();
 	[[Continue|2]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Dialog" tags="" position="50,325" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="Dialog" tags="" position="0,4175" size="100,100">{=
 [&lt;div class=&quot;dialog&quot;&gt;
 	(if: $dialog_image_path is not &quot;&quot;)[
 			(print: &#39;&lt;img class=&quot;dialog-image&quot; src=&quot;./dialog/&#39; + (text: $dialog_image_path) + &#39;.png&quot;/&gt;&#39;)
@@ -1051,10 +1051,10 @@ music.play();
 	[[Continue|39]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Lost" tags="" position="50,200" size="100,100"> &lt;div class=&quot;lost&quot;&gt;(text-colour:white)+(bg:(gradient: 0, 0,#474747,0.4794,#e61919,1,#474747))[&#39;&#39;You Died&#39;&#39;]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="61" name="Lost" tags="" position="0,4050" size="100,100"> &lt;div class=&quot;lost&quot;&gt;(text-colour:white)+(bg:(gradient: 0, 0,#474747,0.4794,#e61919,1,#474747))[&#39;&#39;You Died&#39;&#39;]
  &lt;/div&gt;
  &lt;div class=&#39;myButton&#39;&gt;
-	[[Restart Game|Start]]
+
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="250,1223" size="100,100">{=
 (set: $image_path to &quot;49&quot;)
@@ -1593,7 +1593,7 @@ music.play();
 
 [(display: &quot;Dialog&quot;)]&lt;dialog|
 
-</tw-passagedata><tw-passagedata pid="99" name="63" tags="" position="725,2275" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="99" name="63" tags="" position="775,2275" size="100,100">{=
 (set: $image_path to &quot;79&quot;)
 (display: &quot;Menu&quot;)
 (set: $audio to &quot;hit&quot;)
@@ -1603,7 +1603,7 @@ music.play();
 	[[Continue|64]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="64" tags="" position="550,2275" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="100" name="64" tags="" position="600,2275" size="100,100">{=
 (set: $image_path to &quot;80&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
@@ -1612,7 +1612,7 @@ music.play();
 	[[Continue|65]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="65" tags="" position="375,2275" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="101" name="65" tags="" position="425,2275" size="100,100">{=
 (set: $image_path to &quot;81&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -2158,7 +2158,7 @@ music.play();
 	[[Continue|FIM]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Audio" tags="" position="50,450" size="100,100">(print: &quot;&lt;script&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Audio" tags="" position="0,4300" size="100,100">(print: &quot;&lt;script&gt;
 var passage = document.getElementsByTagName(&#39;tw-passage&#39;)[0];
 var audio = document.createElement(&#39;audio&#39;);
 passage.appendChild(audio);
