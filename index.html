@@ -16,16 +16,18 @@
   top: 90px;
 }
 
-xtw-sidebar{
+tw-sidebar{
 	visibility: hidden
 }
 
-xtw-sidebar xtw-icon.redo {
+tw-sidebar xtw-icon.redo {
 	display: none;
 }
-xtw-sidebar xtw-icon.undo {
+
+tw-sidebar xtw-icon.undo {
 	display: none;
 }
+
 
 .start{
     background-image: url(./images/start.png);
@@ -291,7 +293,14 @@ audio.id = "click";
 audio.src= "./audio/click.mp3";
 audio.loop = false;
 audio.volume = 0.2;
-document.body.appendChild(audio);</script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">{=
+document.body.appendChild(audio)
+
+var music = document.createElement('audio');
+music.id = "music";
+music.src = "./audio/background.mp3";
+music.loop = true;
+music.volume = 0.1;
+document.body.appendChild(music)</script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">{=
 &lt;div class=&quot;start&quot;&gt;
 (set: $items to (a: ))
 &lt;div class=&quot;start-header&quot;&gt;
@@ -439,18 +448,11 @@ sound.play();
 	]
 	&lt;/span&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="1" tags="" position="401,224" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="1" tags="" position="400,225" size="100,100">{=
 &lt;script&gt;
 var music = document.getElementById(&#39;music&#39;);
-if(music==null){
-music = document.createElement(&#39;audio&#39;);
-music.id = &quot;music&quot;;
-music.src = &quot;./audio/background.mp3&quot;;
-music.loop = true;
-music.volume = 0.1;
+music.currentTime = 0;
 music.play();
-}
-
 &lt;/script&gt;
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
