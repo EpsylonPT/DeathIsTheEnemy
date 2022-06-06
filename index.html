@@ -32,6 +32,11 @@ xtw-sidebar xtw-icon.undo {
     background-repeat: no-repeat;
     background-size: cover;
   	height: 1000px;
+  	top: 50px;
+}
+
+.start-header{
+  	top: 100px;
 }
 
 .end{
@@ -39,11 +44,11 @@ xtw-sidebar xtw-icon.undo {
 }
 
 .footer{
- top: 45px;  
+ top: 250px;  
 }
 
 .buttonContainerstart{
-  top: 100px;
+  top: 200px;
 }
 
 html {
@@ -281,12 +286,14 @@ tw-passage {
 
 tw-story{
 background:#060606 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAAC5JREFUGFcFwaENAAAIA7CRoEaCw/L/f4gJBLTW3Tcz2F1YVZ0kkIS5+0UEMhMPRh8Mvv52fnIAAAAASUVORK5CYII=);
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="250,225" size="100,100">{=
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="251.66666666666666,235" size="100,100">{=
 &lt;div class=&quot;start&quot;&gt;
 (set: $items to (a: ))
+&lt;div class=&quot;start-header&quot;&gt;
 &lt;h2&gt;Welcome to&lt;/h2&gt;
 &lt;div class=&quot;Game&quot;&gt;
 #(b4r:&quot;groove&quot;,&quot;groove&quot;,&quot;ridge&quot;,&quot;ridge&quot;)+(b4r-colour:white)[&lt;span&gt; Death is the Enemy &lt;/span&gt;]&lt;/div&gt;
+&lt;/div&gt;
 &lt;p/&gt;
 &lt;div class=&quot;buttonContainer&quot;&gt;
 &lt;div class=&quot;buttonContainerstart&quot;&gt;
@@ -335,6 +342,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="5" tags="" position="1000,225" size="100,100">{=
 (set: $image_path to &quot;5&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;dog&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lee runs in after him, drops his utensils close to the door and pets the dog.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|6]]
@@ -386,7 +395,7 @@ Prof. Soraia Ferreira
 	[[Continue|12]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="12" tags="" position="1275,650" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="12" tags="" position="1275,648.3333333333334" size="100,100">{=
 (set: $image_path to &quot;15&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -399,6 +408,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="13" tags="" position="675,725" size="100,100">{=
 (set: $image_path to &quot;23&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;zombies1&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;On the victorious way home, with prey in their hands, they stumbled on a horde of infected humans crossing a forest path.&lt;br/&gt;They follow a slow rhythm.&lt;br/&gt;Too many to count. The first time the two have seen infected up close. They decide to go another way home.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|14]]
@@ -418,7 +429,19 @@ Prof. Soraia Ferreira
 	]
 	&lt;/span&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="1" tags="" position="400,225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="1" tags="" position="401.66666666666663,224.99999999999997" size="100,100">{=
+&lt;script&gt;
+var music = document.getElementById(&#39;music&#39;);
+if(music==null){
+music = document.createElement(&#39;audio&#39;);
+music.id = &quot;music&quot;;
+music.src = &quot;./audio/background.mp3&quot;;
+music.loop = true;
+music.volume = 0.1;
+music.play();
+}
+
+&lt;/script&gt;
 (set: $image_path to &quot;1&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -549,14 +572,19 @@ Prof. Soraia Ferreira
 ]</tw-passagedata><tw-passagedata pid="20" name="9-a" tags="" position="2025,75" size="100,100">{=
 (set: $image_path to &quot;9&quot;)
 (display: &quot;Menu&quot;)
+
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
+  (set: $audio to &quot;horse&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to true)
 	  (set: $dialog_text to &quot;The Stables&quot;)
 	  (set: $dialog_options to (a: ) )
 	  ]
   (if: $dialog_index is 1)[
+  	  (set: $audio to &quot;rattling&quot;)
+	(display: &quot;Audio&quot;)
   	  (set: $searched_rooms to ($searched_rooms+1))
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to false)
@@ -577,6 +605,8 @@ Prof. Soraia Ferreira
 	  (set: $dialog_options to (a: ) )
 	  ]
   (if: $dialog_index is 1)[
+	  (set: $audio to &quot;rattling&quot;)
+	(display: &quot;Audio&quot;)
       (set: $searched_rooms to ($searched_rooms+1))
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to false)
@@ -597,6 +627,8 @@ Prof. Soraia Ferreira
 	  (set: $dialog_options to (a: ) )
 	  ]
   (if: $dialog_index is 1)[
+  	  (set: $audio to &quot;rattling&quot;)
+	(display: &quot;Audio&quot;)
       (set: $searched_rooms to ($searched_rooms+1))
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_next to false)
@@ -691,6 +723,8 @@ Prof. Soraia Ferreira
 </tw-passagedata><tw-passagedata pid="27" name="12-a" tags="" position="1125,550" size="100,100">{=
 (set: $image_path to &quot;14&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;water_drop&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They go to the spring, but there is nothing there.&lt;div class=&#39;myButton&#39;&gt;
 	[[Go Back|12]]
@@ -714,9 +748,11 @@ Prof. Soraia Ferreira
 	[[Continue|12-b.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="12-b.1" tags="" position="975,800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="12-b.1" tags="" position="973.3333333333334,798.3333333333334" size="100,100">{=
 (set: $image_path to &quot;18&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They spot the deer. Lee removes the rifle from his back and shoots. The deer falls. Bullseye.
 &lt;div class=&#39;myButton&#39;&gt;
@@ -726,6 +762,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="12-a.1" tags="" position="975,675" size="100,100">{=
 (set: $image_path to &quot;18&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They spot the boar. Lee removes the rifle from his back and shoots. The boar falls. Bullseye.
 &lt;div class=&#39;myButton&#39;&gt;
@@ -734,30 +772,36 @@ Prof. Soraia Ferreira
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="12-a.2" tags="" position="825,675" size="100,100">{=
 (set: $image_path to &quot;19&quot;)
+(set: $audio to &quot;boar&quot;)
+(display: &quot;Audio&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John grabs the boar and carries it on his back.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|13]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="12-b.2" tags="" position="825,800" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="12-b.2" tags="" position="825,798.3333333333334" size="100,100">{=
 (set: $image_path to &quot;20&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;deer&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John grabs the deer and carries it on his back.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|13]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="14" tags="flashback" position="500,725" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="14" tags="flashback" position="500,726.6666666666666" size="100,100">{=
 (set: $image_path to &quot;24&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;buttonContainer&quot;&gt;They&#39;d only seen infected on television, in the first days of the pandemic.&lt;br/&gt;It&#39;s been a long time since Lee and John have been isolated in the farm.&lt;br&gt; After the initial news of the infection and how dangerous it was, Lee and John isoloated themselves in the farm.&lt;div class=&#39;myButton&#39;&gt;
+  &lt;div class=&quot;buttonContainer&quot;&gt;They&#39;d only seen infected on television, in the first days of the pandemic.&lt;br/&gt;It&#39;s been a long time since Lee and John have been alone in the farm.&lt;br&gt; After the initial news of the infection and how dangerous it was, they isoloated themselves in the farm.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|15]]
 	&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="15" tags="flashback" position="350,725" size="100,100">{=
 (set: $image_path to &quot;25&quot;)
+(set: $audio to &quot;tv&quot;)
+(display: &quot;Audio&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;There had been no television signal in ages.&lt;div class=&#39;myButton&#39;&gt;
@@ -800,6 +844,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="19" tags="" position="525,1025" size="100,100">{=
 (set: $image_path to &quot;29&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;door&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Inside, the utter smell of decay hit their nose. Lee and John enter different rooms. Lee sees Tobin staring at a picture on the wall.
 &lt;div class=&#39;myButton&#39;&gt;
@@ -818,6 +864,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="21" tags="" position="825,1025" size="100,100">{=
 (set: $image_path to &quot;32&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;pain&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Tobin turns and Lees sees that he is infected. He attacks.&lt;br/&gt;Lee falls to the ground, dropping his gun.&lt;br/&gt;Tobin bites on Lee’s leg.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|22]]
@@ -842,6 +890,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="24" tags="" position="1275,1025" size="100,100">{=
 (set: $image_path to &quot;34&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John grabs the rifle form the ground and shoots Tobin in the head.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|26]]
@@ -871,10 +921,12 @@ Prof. Soraia Ferreira
 	[[Continue|29]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="29" tags="" position="1875,1125" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="29" tags="" position="1873.3333333333333,1125" size="100,100">{=
 (set: $image_path to &quot;38&quot;)
 (set: $items to (a: &#39;medicine&#39;))
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;rattling&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John performs first aid on Lee. He did his best with the materials available.&lt;br/&gt;He managed to stop the bleeding, but the infection could already be in Lee’s blood.&lt;br/&gt;They need to act swiftly, for Lee to survive, otherwise, in the best case scenario, Lee is going to lose a leg.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|30]]
@@ -924,6 +976,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="35" tags="" position="1000,1225" size="100,100">{=
 (set: $image_path to &quot;46&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;zombies1&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Closer to the city, they see crosses, along the road, with infected hanging from them.&lt;br/&gt;Some are still moving and follow John and his grandfather with their eyes.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|36]]
@@ -938,7 +992,7 @@ Prof. Soraia Ferreira
 	[[Continue|37]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="700,1225" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="37" tags="" position="695,1226.6666666666667" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
@@ -990,9 +1044,11 @@ Prof. Soraia Ferreira
  &lt;div class=&#39;myButton&#39;&gt;
 	[[Restart Game|Start]]
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="250,1225" size="100,100">{=
+</tw-passagedata><tw-passagedata pid="62" name="39" tags="" position="250,1223.3333333333333" size="100,100">{=
 (set: $image_path to &quot;49&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;sewer&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They go into the sewer. They use the only lantern they had to light the way. Caesar is scared of the rats passing ahead of them.&lt;br/&gt;They walk for a couple of minutes before reaching a  fork in the murky tunnels.&lt;div class=&#39;myButton&#39;&gt;
 	[[Go Left|39-a]]
@@ -1010,6 +1066,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="64" name="39-a" tags="" position="100,1325" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;sewer&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;They continue their path inside the sewer, and after a few meters they hear a voice.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|39-a-1]]
@@ -1018,6 +1076,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="39-a-1" tags="" position="100,1450" size="100,100">{=
 (set: $image_path to &quot;50&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;chae&quot;)
+(display: &quot;Audio&quot;)
 (set: $dialog_index to 0)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
@@ -1106,6 +1166,8 @@ Prof. Soraia Ferreira
 	  (set: $dialog_image_path to &quot;John&quot;)
 	  (set: $dialog_options to (a:))
 	  (set: $dialog_next to true)
+	  (set: $audio to &quot;reload&quot;)
+	  (display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;What the hell was that?&quot;)
 	]
 	  (if: $dialog_index is 1)[
@@ -1164,6 +1226,8 @@ Prof. Soraia Ferreira
 (set: $image_path to &quot;54&quot;)
 (set: $items to (a: &quot;medicine&quot;,&quot;map&quot;))
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John kills the child. The mother tries to attack Lee.&lt;br/&gt;John kills her.&lt;br/&gt;They pick up the map and the medicine. They now know the location of the hospital.&lt;div class=&#39;myButton&#39;&gt;
 	[[Leave the sewer|42-b]]
@@ -1197,6 +1261,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="77" name="45" tags="" position="1300,1900" size="100,100">{=
 (set: $image_path to &quot;59&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shoot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lee shoots the infected from behind. Caesar throws himself at them.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|46]]
@@ -1214,6 +1280,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="79" name="47" tags="" position="1550,1900" size="100,100">{=
 (set: $image_path to &quot;61&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;rain&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Their strategy worked. The blood is everywhere, their skin, their clothes and their weapons. It starts to rain, torrentially. They need to find shelter. Night&#39;s falling. The screams and grunts of the infected increase. It’s horrifying.&lt;br/&gt;After a few meters, they find an abandoned building. It seems to be what&#39;s left of some offices.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|48]]
@@ -1230,6 +1298,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="81" name="49" tags="" position="1800,1900" size="100,100">{=
 (set: $image_path to &quot;63&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;rattling&quot;)
+(display: &quot;Audio&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John finds a supermarket. Silently, he enters. There is almost nothing on the shelves. He fills his backpack with what&#39;s left. On the way back out he hears steps behind him.&lt;div class=&#39;myButton&#39;&gt;
@@ -1243,6 +1313,8 @@ Prof. Soraia Ferreira
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;Lyana&quot;)
 	  (set: $dialog_next to true)
+	  (set: $audio to &quot;reload&quot;)
+	(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;Stop right there! Keep your dog still! Put your hands up and turn around slowly!&quot;)]
 	  (set: $dialog_options to (a:) )
   (if: $dialog_index is 1)[
@@ -1259,6 +1331,8 @@ Prof. Soraia Ferreira
 </tw-passagedata><tw-passagedata pid="83" name="50-Loose" tags="" position="1925,1775" size="100,100">{=
 (set: $image_path to &quot;63&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;The person behind John shoots and does not miss.
   &lt;p/&gt;
@@ -1384,9 +1458,11 @@ Prof. Soraia Ferreira
 	[[Continue|57]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="57" tags="" position="1675,2275" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="57" tags="" position="1678.3333333333333,2275" size="100,100">{=
 (set: $image_path to &quot;73&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;evil_laugh&quot;)
+(display: &quot;Audio&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
@@ -1402,6 +1478,8 @@ Prof. Soraia Ferreira
   (if: $dialog_index is 3)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
 	  (set: $dialog_next to false)
+	  (set: $audio to &quot;hit&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;Who the fuck are these guys? (punches John in the face)&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;58&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )]
@@ -1428,6 +1506,8 @@ Prof. Soraia Ferreira
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
+	  (set: $audio to &quot;dog_squeel&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;Get down! Stupid dog!&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
@@ -1465,6 +1545,10 @@ Prof. Soraia Ferreira
 </tw-passagedata><tw-passagedata pid="97" name="61" tags="" position="1050,2275" size="100,100">{=
 (set: $image_path to &quot;78&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;evil_laugh&quot;)
+(display: &quot;Audio&quot;)
+(set: $audio to &quot;hit&quot;)
+(display: &quot;Audio&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;The guards start laughing. John tries to attack one of them, but he is quickly put down. One of the guards punches him in the stomach.&lt;div class=&#39;myButton&#39;&gt;
@@ -1482,10 +1566,14 @@ Prof. Soraia Ferreira
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
+	  (set: $audio to &quot;chae&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;Where did you think you were going uhm?&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to false)
+	  (set: $audio to &quot;slap&quot;)
+	(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;He slaps her so hard that she falls to the ground.&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;63&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )]
@@ -1496,6 +1584,8 @@ Prof. Soraia Ferreira
 </tw-passagedata><tw-passagedata pid="99" name="63" tags="" position="725,2275" size="100,100">{=
 (set: $image_path to &quot;79&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;hit&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee are beaten by Luke and his men and lose consciousness.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|64]]
@@ -1551,14 +1641,15 @@ Prof. Soraia Ferreira
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
- &lt;div class=&quot;buttonContainer&quot;&gt;Lyana calls the guard. The big guy slowly stands up and approaches the cell. She knows him, and she starts small talk.
-&lt;div class=&#39;myButton&#39;&gt;
+ &lt;div class=&quot;buttonContainer&quot;&gt;Lyana calls the guard. The big guy slowly stands up and approaches the cell. She knows him, and she starts small talk.&lt;div class=&#39;myButton&#39;&gt;
   	[[Continue|67.1]]
   &lt;/div&gt;
 &lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="104" name="67-a" tags="" position="950,2675" size="100,100">{=
 (set: $image_path to &quot;85&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;rattling&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John steal the keys of the prison cell. The guard is unware.&lt;div class=&#39;myButton&#39;&gt;
 	[[Wait for the guard to fall asleep|67-a-a]]
@@ -1570,6 +1661,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="105" name="67-b" tags="" position="950,2450" size="100,100">{=
 (set: $image_path to &quot;84&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;hit&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John kills the guard. He puts the body down and gets the keys from his pocket. John gives Lyana the keys and helps Lee get up. They wait until the night to leave the prison.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|68]]
@@ -1578,11 +1671,13 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="106" name="68" tags="" position="1325,2575" size="100,100">{=
 (set: $image_path to &quot;88&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;infirmary&quot;)
+(display: &quot;Audio&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_next to true)
-	  (set: $dialog_text to &quot;John, Lyana and Lee head to the Infarmary. Inside, they see a local doctor.&quot;)
+	  (set: $dialog_text to &quot;John, Lyana and Lee head to the infirmary. Inside, they see a local doctor.&quot;)
 	  (set: $dialog_options to (a: ))]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;&quot;)
@@ -1615,6 +1710,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="108" name="67-a-b" tags="" position="1100,2750" size="100,100">{=
 (set: $image_path to &quot;87&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;hit&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John, Lyana and Lee attack the guard. Knocking up unconscious.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|68]]
@@ -1624,6 +1721,8 @@ Prof. Soraia Ferreira
 (set: $image_path to &quot;89&quot;)
 (set: $doctor_died to true)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;pain&quot;)
+(display: &quot;Audio&quot;)
 (set: $dialog_index to 0)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John kills the doctor.&lt;div class=&#39;myButton&#39;&gt;
@@ -1742,6 +1841,8 @@ Prof. Soraia Ferreira
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
 	  (set: $dialog_next to false)
+(set: $audio to &quot;evil_laugh&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;There is no escape from Hope Street!&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;75&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )]
@@ -1761,6 +1862,8 @@ Prof. Soraia Ferreira
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
 	  (set: $dialog_next to false)
+	  (set: $audio to &quot;evil_laugh&quot;)
+(display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;There is no escape from Hope Street!&quot;)
 	  (set: $opt1 to (dm:  &quot;path&quot;, &quot;75&quot;, &quot;text&quot;, &#39;Continue&#39;))
 	  (set: $dialog_options to (a: $opt1) )]
@@ -1772,6 +1875,8 @@ Prof. Soraia Ferreira
 (set: $image_path to &quot;102&quot;)
 (display: &quot;Menu&quot;)
 (set: $dialog_index to 0)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
  &lt;div class=&quot;buttonContainer&quot;&gt;Lee, even though injured, kills some of Luke’s men, like the hunter he is. Growls of infected are heard outside the walls.&lt;br/&gt;They are overwhelmed. It is too many men against them. They need to do something.&lt;div class=&#39;myButton&#39;&gt;
   	[[Lyana opens the door|75-a]]
@@ -1784,6 +1889,8 @@ Prof. Soraia Ferreira
 (set: $image_path to &quot;104&quot;)
 (set: $who_door to &quot;Lyana&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;door&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lyana opens the secret door. John and Lee give her some cover. Infected start to get in.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|76]]
@@ -1793,6 +1900,8 @@ Prof. Soraia Ferreira
 (set: $image_path to &quot;105&quot;)
 (set: $who_door to &quot;Lee&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;door&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lee opens the secret door. John and Lyana give her some cover. Infected start to get in.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|76]]
@@ -1801,6 +1910,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="126" name="76" tags="" position="1025,3025" size="100,100">{=
 (set: $image_path to &quot;101&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Luke Terry and his men shoot towards the door.
 (if: $who_door is &quot;Lyana&quot;)[
@@ -1817,14 +1928,18 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="127" name="77-a" tags="" position="800,2950" size="100,100">{=
 (set: $image_path to &quot;109&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Luke Terry kills Lyana.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|77-a.1]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="77-b" tags="" position="800,3123.3333333333335" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="128" name="77-b" tags="" position="800,3121.666666666667" size="100,100">{=
 (set: $image_path to &quot;108&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;pain&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Lee is killed by the infected. He is too slow to move away from them. John and Lyana rush to try to catch him.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|77-b.1]]
@@ -1841,6 +1956,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="130" name="77-a.2" tags="" position="475,2950" size="100,100">{=
 (set: $image_path to &quot;110&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;no&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John screams in pain of Lyana’s and Lee’s death.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|78]]
@@ -1857,6 +1974,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="132" name="77-b.2" tags="" position="475,3125" size="100,100">{=
 (set: $image_path to &quot;110&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;no&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John screams in pain of his grandfather&#39;s death.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|78]]
@@ -1865,6 +1984,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="133" name="78" tags="" position="325,3026.6666666666665" size="100,100">{=
 (set: $image_path to &quot;106&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;zombies1&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;The infect start to flood him. Caos ensues.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|79]]
@@ -1873,6 +1994,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="134" name="79" tags="" position="325,3200" size="100,100">{=
 (set: $image_path to &quot;103&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;reload&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Trying to get revenge, John focuses his fire on Luke Terry.&lt;div class=&#39;myButton&#39;&gt;
 	[[Continue|80]]
@@ -1881,6 +2004,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="135" name="80" tags="" position="326.6666666666667,3375" size="100,100">{=
 (set: $image_path to &quot;112&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;Luke Terry gets shot in the stomach, but survives. He is hurt, but not dead yet. His guards rush to help him.
 (if: $who_door is &quot;Lyana&quot;)[
@@ -1947,6 +2072,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="141" name="37.2-Loose" tags="" position="700,1475" size="100,100">{=
 (set: $image_path to &quot;48&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;The guards shoot Lee and John before they could even reply.&lt;br/&gt;In these daring times people mistrust everyone who gets too close.
   &lt;p/&gt;
@@ -1955,6 +2082,8 @@ Prof. Soraia Ferreira
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="142" name="41.b-Loose" tags="" position="475,2050" size="100,100">{=
 (set: $image_path to &quot;55&quot;)
 (display: &quot;Menu&quot;)
+(set: $audio to &quot;shot&quot;)
+(display: &quot;Audio&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
   &lt;div class=&quot;buttonContainer&quot;&gt;John and Lee get closer to Chae.&lt;br/&gt; The sudden movement scares Chae-Rin Jung. Thinking they will hurt her.&lt;br/&gt;She quickly withdraws her gun, not giving them a moment to react, and shoots them.&lt;p/&gt;
  (display: &quot;Lost&quot;)
@@ -2017,7 +2146,17 @@ Prof. Soraia Ferreira
 	[[Continue|FIM]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata></tw-storydata>
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="149" name="Audio" tags="" position="48.33333333333319,446.66666666666663" size="100,100">(print: &quot;&lt;script&gt;
+var passage = document.getElementsByTagName(&#39;tw-passage&#39;)[0];
+var audio = document.createElement(&#39;audio&#39;);
+console.log(passage);
+passage.appendChild(audio);
+
+passage.getElementsByTagName(&#39;audio&#39;)[0].src = \&quot;./audio/&quot; + $audio + &quot;.mp3\&quot;;
+passage.getElementsByTagName(&#39;audio&#39;)[0].loop = false;
+passage.getElementsByTagName(&#39;audio&#39;)[0].volume = 0.3;
+passage.getElementsByTagName(&#39;audio&#39;)[0].play();
+&lt;/script&gt;&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
