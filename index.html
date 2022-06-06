@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Zombies.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Zombies" startnode="1" creator="Twine" creator-version="2.3.15" ifid="7828D553-647A-4BC8-9C0E-0C3C518A155F" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(https://fonts.googleapis.com/css?family=VT323);
+<tw-storydata name="Zombies" startnode="1" creator="Twine" creator-version="2.3.15" ifid="7828D553-647A-4BC8-9C0E-0C3C518A155F" zoom="0.25" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url(https://fonts.googleapis.com/css?family=VT323);
 
 .feup{
  width: 400px; 
@@ -1468,17 +1468,17 @@ music.play();
 	[[Continue|57]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="57" tags="" position="1678,2275" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="92" name="57" tags="" position="1675,2275" size="100,100">{=
 (set: $image_path to &quot;73&quot;)
 (display: &quot;Menu&quot;)
-(set: $audio to &quot;evil_laugh&quot;)
-(display: &quot;Audio&quot;)
 &lt;span class=&#39;myButton&#39;&gt;
   (if: $dialog_index is 0)[
 	  (set: $dialog_image_path to &quot;&quot;)
 	  (set: $dialog_text to &quot;A group of armed men surrounds them. It&#39;s Luke Terry.&quot;)
 	  (set: $dialog_next to true)
-	  (set: $dialog_options to (a: ))]
+	  (set: $dialog_options to (a: ))
+	  (set: $audio to &quot;evil_laugh&quot;)
+		(display: &quot;Audio&quot;)]
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
 	  (set: $dialog_text to &quot;I have been following your footsteps and have finally found you, you stupid bitch.&quot;)]
@@ -1517,7 +1517,7 @@ music.play();
   (if: $dialog_index is 1)[
 	  (set: $dialog_image_path to &quot;Luke&quot;)
 	  (set: $audio to &quot;dog_squeel&quot;)
-(display: &quot;Audio&quot;)
+	  (display: &quot;Audio&quot;)
 	  (set: $dialog_text to &quot;Get down! Stupid dog!&quot;)]
   (if: $dialog_index is 2)[
 	  (set: $dialog_image_path to &quot;&quot;)
@@ -1973,7 +1973,7 @@ music.play();
 	[[Continue|77-a.3]]
 	&lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="77-b.2" tags="" position="450,3125" size="100,100">{=
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="131" name="77-b.2" tags="" position="400,3125" size="100,100">{=
 (set: $image_path to &quot;111&quot;)
 (display: &quot;Menu&quot;)
 &lt;div class=&quot;dialog&quot;&gt;
